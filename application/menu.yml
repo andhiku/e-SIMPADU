@@ -1,0 +1,57 @@
+public:
+  Informasi: publik/informasi
+  Login: publik/userlogin
+    
+admin:
+  Pengguna: publik/pengguna
+  Jns Layanan: layanan/jnslayanan
+  Form Registrasi: layanan/daftarlayanan
+  Laporan: laporan/rekaplayanan
+  Logout: publik/logout
+  
+op1:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+op2:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+op3:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+op4:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+op5:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+op6:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+op7:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+op8:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+op9:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+  
