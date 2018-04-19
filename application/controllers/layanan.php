@@ -28,6 +28,7 @@ class Layanan extends CI_Controller {
             case 'simpan':
                 $dataAdd = array(
                     'nmlayanan' => $this->input->post('nama'),
+                    'tlp' => $this->input->post('telepon'),
                     'waktu' => $this->input->post('waktu'),
                 );
                 $this->db->insert('jnslayanan', $dataAdd);
@@ -51,6 +52,7 @@ class Layanan extends CI_Controller {
                 $filter = "id = '$idx'";
                 $dataSet = array(
                     'nmlayanan' => $this->input->post('nama'),
+                    'tlp' => $this->input->post('telepon'),
                     'waktu' => $this->input->post('waktu'),
                 );
                 $this->crud_model->data_update('jnslayanan', $filter, $dataSet);
