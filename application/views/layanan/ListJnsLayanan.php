@@ -22,7 +22,7 @@ $urlset = base_url() . $this->router->class . '/' . $this->router->method . '/';
                     <thead>
                         <tr>
                             <th>Nama Layanan</th>
-                            <th colspan="1">Nomor Telepon</th>
+                            <th>Nomor Telepon</th>
                             <th colspan="2">Waktu</th>
                         </tr>
                     </thead>
