@@ -52,7 +52,7 @@ class Layanan extends CI_Controller {
                 $filter = "id = '$idx'";
                 $dataSet = array(
                     'nmlayanan' => $this->input->post('nama'),
-                    'telp' => $this->input->post('telepon'),
+                    'telp' => $this->input->post('telp'),
                     'waktu' => $this->input->post('waktu'),
                 );
                 $this->crud_model->data_update('jnslayanan', $filter, $dataSet);
