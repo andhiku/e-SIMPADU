@@ -6,7 +6,7 @@ $form_aksi = isset($dtedit) ? 'updatedata/' . $rows->id : 'simpan';
 $tombol = isset($dtedit) ? 'Update data' : 'Simpan data';
 
 $nama = isset($dtedit) ? $rows->nmlayanan : '';
-$telepon = isset($dtedit) ? $rows->tlp : '';
+$telp = isset($dtedit) ? $rows->telp : '';
 $waktu = isset($dtedit) ? $rows->waktu : '';
 
 //$tgl = isset($dtedit) ? date('d/m/Y', strtotime($rows->tanggal)) : '';
@@ -38,8 +38,8 @@ $waktu = isset($dtedit) ? $rows->waktu : '';
                         Nomor Telepon
                     </label>
                     <div class="col-xs-4">
-                        <input type="text" class="form-control" name="telepon" id="telepon" 
-                               value="<?= $telepon ?>" placeholder="Nomor Telepon">
+                        <input type="text" class="form-control" name="telp" id="telp" 
+                               value="<?= $telp ?>" placeholder="Nomor Telepon">
                     </div>
                 </div>
                 <div class="form-group">

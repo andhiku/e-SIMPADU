@@ -28,7 +28,7 @@ class Layanan extends CI_Controller {
             case 'simpan':
                 $dataAdd = array(
                     'nmlayanan' => $this->input->post('nama'),
-                    'tlp' => $this->input->post('telepon'),
+                    'telp' => $this->input->post('telepon'),
                     'waktu' => $this->input->post('waktu'),
                 );
                 $this->db->insert('jnslayanan', $dataAdd);
@@ -52,7 +52,7 @@ class Layanan extends CI_Controller {
                 $filter = "id = '$idx'";
                 $dataSet = array(
                     'nmlayanan' => $this->input->post('nama'),
-                    'tlp' => $this->input->post('telepon'),
+                    'telp' => $this->input->post('telepon'),
                     'waktu' => $this->input->post('waktu'),
                 );
                 $this->crud_model->data_update('jnslayanan', $filter, $dataSet);
@@ -61,8 +61,8 @@ class Layanan extends CI_Controller {
 
             default :
                 $data['judul'] = "PENGATURAN JENIS LAYANAN";
-                $data['dtlist'] = $this->crud_model->get_data_tabel('jnslayanan');
-                //$data['dtlist'] = $this->crud_model->joinTable('jnslayanan' . , 'idlayanan');
+                //$data['dtlist'] = $this->crud_model->get_data_tabel('jnslayanan');
+                $data['dtlist'] = $this->crud_model->getDataJoinTable('jnslayanan', 'pemroses', 'idlayanan = id');
                 $this->template->load('template/_hz_template', 'layanan/ListJnsLayanan', $data);
         }
     }
@@ -82,7 +82,7 @@ class Layanan extends CI_Controller {
                     'pemohon' => $this->input->post('nama'),
                     'jenis' => $this->input->post('jnslayan'),
                     'keterangan' => 'TERDAFTAR',
-                    'telp' => $this->input->post('telp'),
+                    //'telp' => $this->input->post('telp'),
                     'stts' => '0',
                 );
                 $this->db->insert('layanan_tb', $dataAdd);
