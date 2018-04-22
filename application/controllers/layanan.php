@@ -28,7 +28,7 @@ class Layanan extends CI_Controller {
             case 'simpan':
                 $dataAdd = array(
                     'nmlayanan' => $this->input->post('nama'),
-                    'telp' => $this->input->post('telepon'),
+                    'telp' => $this->input->post('telp'),
                     'waktu' => $this->input->post('waktu'),
                 );
                 $this->db->insert('jnslayanan', $dataAdd);
@@ -63,11 +63,10 @@ class Layanan extends CI_Controller {
                 $data['judul'] = "PENGATURAN JENIS LAYANAN";
                 //$data['dtlist'] = $this->crud_model->get_data_tabel('jnslayanan');
                 $data['dtlist'] = $this->crud_model->getDataJoinTable(
-                        'jnslayanan.id, jnslayanan.nmlayanan, jnslayanan.waktu, pemroses.telp',
                         'jnslayanan',
                         'pemroses',
                         'pemroses.idlayanan=jnslayanan.id'
-                        );
+                );
                 $this->template->load('template/_hz_template', 'layanan/ListJnsLayanan', $data);
         }
     }
@@ -126,9 +125,9 @@ class Layanan extends CI_Controller {
                 $users = $this->session->userdata('logged_user');
                 $idmaster = $this->input->post('idmlayan');
                 $filter = "id = '$idmaster'";
-                
+
                 $endpross = $this->input->post('selesai');
-                if ($endpross==TRUE){
+                if ($endpross == TRUE) {
                     $prosesset = '99';
                 } else {
                     $prosesset = $this->input->post('prosesno');
@@ -159,8 +158,6 @@ class Layanan extends CI_Controller {
                 $this->template->load('template/_hz_template', 'layanan/ListLayanan', $data);
         }
     }
-    
-    
 
     function cari() {
         $cari_peg = $this->input->POST('caripeg');

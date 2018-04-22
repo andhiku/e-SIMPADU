@@ -65,11 +65,12 @@ class Crud_model extends CI_Model {
         return $result->result_array();
     }
 
-    function getDataJoinTable($field = null, $tbl1 = null, $tbl2 = null, $kondisi = null) {
-        $this->db->select($field);
-        $this->db->from($tbl1);
-        $this->db->join($tbl2, $kondisi, 'inner'); 
+    function getDataJoinTable($tbl1 = null, $tbl2 = null, $kondisi = null) {
+        $this->db->select('*');
+        $this->db->from($tbl2);
+        $this->db->join($tbl1, $kondisi, 'inner'); 
         $result = $this->db->get();
+        return $result->result_array();
     }
 
     function GetDataRandom($tbl = null) {

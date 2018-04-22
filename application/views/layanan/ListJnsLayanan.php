@@ -36,7 +36,7 @@ $urlset = base_url() . $this->router->class . '/' . $this->router->method . '/';
                                            onclick="location.href = '<?= $urlset ?>edit/<?= $rowtr['id'] ?>'">
                                             <?= $rowtr['nmlayanan']; ?></a>
                                     </td>
-                                    <td><?= $rowtr['tlp']; ?></td>
+                                    <td><?= $rowtr['telp']; ?></td>
                                     <td><?= $rowtr['waktu']; ?>&nbsp;Hari kerja</td>
                                     <td width="6%">
                                         <button type="button" class="btn btn-warning" 
