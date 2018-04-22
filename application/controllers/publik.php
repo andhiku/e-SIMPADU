@@ -35,6 +35,7 @@ class Publik extends CI_Controller {
                     'user_nama' => $this->input->post('nama'),
                     'user_username' => $this->input->post('username'),
                     'user_password' => md5($this->input->post('password')),
+                    'telp' => $this->input->post('telp'),
                     'user_role' => $this->input->post('userrole')
                 );
                 $this->db->insert('user_tb', $dataAdd);
@@ -57,6 +58,7 @@ class Publik extends CI_Controller {
                         'user_nama' => $this->input->post('nama'),
                         'user_username' => $this->input->post('username'),
                         'user_password' => md5($cekUpdatePasw),
+                        'telp' => $this->input->post('telp'),
                         'user_role' => $this->input->post('userrole')
                     );
                 } else {
@@ -64,6 +66,7 @@ class Publik extends CI_Controller {
                         'nip' => $this->input->post('idset'),
                         'user_nama' => $this->input->post('nama'),
                         'user_username' => $this->input->post('username'),
+                        'telp' => $this->input->post('telp'),
                         'user_role' => $this->input->post('userrole')
                     );
                 }

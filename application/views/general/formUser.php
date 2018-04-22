@@ -7,6 +7,7 @@ $tombol = isset($dtedit) ? 'Update data' : 'Simpan data';
 $idset = isset($dtedit) ? $rows->nip : '';
 $username = isset($dtedit) ? $rows->user_username : '';
 $passw = isset($dtedit) ? '' : '';
+$telp = isset($dtedit) ? $rows->telp : '';
 $nama = isset($dtedit) ? $rows->user_nama : '';
 $role = isset($dtedit) ? $rows->user_role : '';
 
@@ -59,6 +60,15 @@ $role = isset($dtedit) ? $rows->user_role : '';
                     <div class="col-xs-4">
                         <input type="text" class="form-control" name="nama" id="nama" 
                                value="<?= $nama ?>" placeholder="Nama lengkap">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">
+                        Nomor Telepon 
+                    </label>
+                    <div class="col-xs-4">
+                        <input type="text" class="form-control" name="telp" id="telp" 
+                               value="<?= $telp ?>" placeholder="Nomor Telepon">
                     </div>
                 </div>
                 <div class="form-group">

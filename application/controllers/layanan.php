@@ -62,6 +62,7 @@ class Layanan extends CI_Controller {
             default :
                 $data['judul'] = "PENGATURAN JENIS LAYANAN";
                 $data['dtlist'] = $this->crud_model->get_data_tabel('jnslayanan');
+                //$data['dtlist'] = $this->crud_model->joinTable('jnslayanan' . , 'idlayanan');
                 $this->template->load('template/_hz_template', 'layanan/ListJnsLayanan', $data);
         }
     }

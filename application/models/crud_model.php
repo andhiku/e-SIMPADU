@@ -65,6 +65,14 @@ class Crud_model extends CI_Model {
         return $result->result_array();
     }
 
+    function joinTable($tbl1 = null, $tbl2 = null, $kondisi = null) {
+        $this->db->select($tbl1, $tbl2); //('tblanswers.*,credentials.*');
+        $this->db->from($tbl1); //('esimpadudb');
+        $this->db->join($tbl2, $kondisi, 'left'); //('credentials', 'tblanswers.answerid = credentials.cid', 'left'); 
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     function GetDataRandom($tbl = null) {
         $this->db->order_by('id', 'RANDOM');
         $result = $this->db->get($tbl);
