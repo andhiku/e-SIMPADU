@@ -48,10 +48,11 @@ class Crud_model extends CI_Model {
         $this->db->insert($tbl, $data);
         return;
     }
-    
+
     function add_saveid($tbl, $data) {
         $this->db->insert($tbl, $data);
-        return $this->db->insert_id();
+        $id = $this->db->insert_id();
+        return (isset($id)) ? $id : FALSE;
     }
 
     function getwhere($tbl = null, $kondisi = null) {
@@ -73,7 +74,7 @@ class Crud_model extends CI_Model {
     function getDataJoinTable($tbl1 = null, $tbl2 = null, $kondisi = null) {
         $this->db->select('*');
         $this->db->from($tbl2);
-        $this->db->join($tbl1, $kondisi, 'inner'); 
+        $this->db->join($tbl1, $kondisi, 'inner');
         $result = $this->db->get();
         return $result->result_array();
     }

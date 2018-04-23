@@ -30,12 +30,12 @@ class Layanan extends CI_Controller {
                     'nmlayanan' => $this->input->post('nama'),
                     'waktu' => $this->input->post('waktu'),
                 );
+                $idx = $this->crud_model->add_saveid('jnslayanan', $dataAdd1);
                 $dataAdd2 = array(
                     'telp' => $this->input->post('telp'),
+                    'idlayanan' => $idx
                     );
-                $this->db->insert('jnslayanan', $dataAdd1);
-                //$this->db->insert('jnslayanan', $dataAdd2);
-                $this->dokumen_model->data_update('pemroses', "telp = ''" , $dataAdd2);
+                $proses = $this->crud_model->add_save('pemroses', $dataAdd2);
                 redirect(base_url() . 'layanan/jnslayanan');
                 break;
 
