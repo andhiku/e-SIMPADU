@@ -49,7 +49,7 @@ class Crud_model extends CI_Model {
         return;
     }
 
-    function add_saveid($tbl, $data) {
+    function add_multisaveid($tbl, $data) {
         $this->db->insert($tbl, $data);
         $id = $this->db->insert_id();
         return (isset($id)) ? $id : FALSE;
@@ -71,7 +71,7 @@ class Crud_model extends CI_Model {
         return $result->result_array();
     }
 
-    function getDataJoinTable($tbl1 = null, $tbl2 = null, $kondisi = null) {
+    function getDataMultiTable($tbl1 = null, $tbl2 = null, $kondisi = null) {
         $this->db->select('*');
         $this->db->from($tbl2);
         $this->db->join($tbl1, $kondisi, 'inner');
@@ -98,7 +98,7 @@ class Crud_model extends CI_Model {
         $this->db->delete($tbl);
         return;
     }
-
+   
     function recTotal($tbl = null, $kondisi = null) {
         if ($kondisi != null) {
             $this->db->where($kondisi);

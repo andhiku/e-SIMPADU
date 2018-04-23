@@ -30,7 +30,7 @@ class Layanan extends CI_Controller {
                     'nmlayanan' => $this->input->post('nama'),
                     'waktu' => $this->input->post('waktu'),
                 );
-                $idx = $this->crud_model->add_saveid('jnslayanan', $dataAdd1);
+                $idx = $this->crud_model->add_multisaveid('jnslayanan', $dataAdd1);
                 $dataAdd2 = array(
                     'telp' => $this->input->post('telp'),
                     'idlayanan' => $idx
@@ -41,14 +41,15 @@ class Layanan extends CI_Controller {
 
             case 'hapus':
                 $filter = "id = '$idx'";
+                $filter1 = "idlayanan = '$idx'";
                 $this->crud_model->hapus_data('jnslayanan', $filter);
+                $this->crud_model->hapus_data('pemroses', $filter);
                 redirect(base_url() . 'layanan/jnslayanan');
                 break;
 
             case 'edit':
                 $filter = "id = '$idx'";
                 $data['dtedit'] = $this->crud_model->getwhere('jnslayanan', $filter);
-                //$data['dtedit'] = $this->crud_model->getwhere('pemroses', $filter);
                 $data['judul'] = "EDIT DATA LAYANAN";
                 $this->template->load('template/_hz_template', 'layanan/formJnsLayanan', $data);
                 break;
@@ -66,7 +67,7 @@ class Layanan extends CI_Controller {
 
             default :
                 $data['judul'] = "PENGATURAN JENIS LAYANAN";
-                $data['dtlist'] = $this->crud_model->getDataJoinTable(
+                $data['dtlist'] = $this->crud_model->getDataMultiTable(
                         'jnslayanan',
                         'pemroses',
                         'pemroses.idlayanan=jnslayanan.id'
