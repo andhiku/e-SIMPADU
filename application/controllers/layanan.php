@@ -56,12 +56,16 @@ class Layanan extends CI_Controller {
 
             case 'updatedata':
                 $filter = "id = '$idx'";
+                $filter1 = "idlayanan = '$idx'";
                 $dataSet = array(
                     'nmlayanan' => $this->input->post('nama'),
-                    'telp' => $this->input->post('telp'),
                     'waktu' => $this->input->post('waktu'),
                 );
+                $dataSet1 = array (
+                    'telp' => $this->input->post('telp'),
+                );
                 $this->crud_model->data_update('jnslayanan', $filter, $dataSet);
+                $this->crud_model->data_update('pemroses', $filter1, $dataSet1);
                 redirect(base_url() . 'layanan/jnslayanan');
                 break;
 
