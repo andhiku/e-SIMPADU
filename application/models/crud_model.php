@@ -48,6 +48,11 @@ class Crud_model extends CI_Model {
         $this->db->insert($tbl, $data);
         return;
     }
+    
+    function add_saveid($tbl, $data) {
+        $this->db->insert($tbl, $data);
+        return $this->db->insert_id();
+    }
 
     function getwhere($tbl = null, $kondisi = null) {
         $query = $this->db->get_where($tbl, $kondisi);

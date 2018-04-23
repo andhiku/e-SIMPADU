@@ -26,12 +26,16 @@ class Layanan extends CI_Controller {
                 break;
 
             case 'simpan':
-                $dataAdd = array(
+                $dataAdd1 = array(
                     'nmlayanan' => $this->input->post('nama'),
-                    'telp' => $this->input->post('telp'),
                     'waktu' => $this->input->post('waktu'),
                 );
-                $this->db->insert('jnslayanan', $dataAdd);
+                $dataAdd2 = array(
+                    'telp' => $this->input->post('telp'),
+                    );
+                $this->db->insert('jnslayanan', $dataAdd1);
+                //$this->db->insert('jnslayanan', $dataAdd2);
+                $this->dokumen_model->data_update('pemroses', "telp = ''" , $dataAdd2);
                 redirect(base_url() . 'layanan/jnslayanan');
                 break;
 
@@ -44,6 +48,7 @@ class Layanan extends CI_Controller {
             case 'edit':
                 $filter = "id = '$idx'";
                 $data['dtedit'] = $this->crud_model->getwhere('jnslayanan', $filter);
+                //$data['dtedit'] = $this->crud_model->getwhere('pemroses', $filter);
                 $data['judul'] = "EDIT DATA LAYANAN";
                 $this->template->load('template/_hz_template', 'layanan/formJnsLayanan', $data);
                 break;
@@ -61,7 +66,6 @@ class Layanan extends CI_Controller {
 
             default :
                 $data['judul'] = "PENGATURAN JENIS LAYANAN";
-                //$data['dtlist'] = $this->crud_model->get_data_tabel('jnslayanan');
                 $data['dtlist'] = $this->crud_model->getDataJoinTable(
                         'jnslayanan',
                         'pemroses',
