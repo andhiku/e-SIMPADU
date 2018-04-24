@@ -59,6 +59,18 @@ class Crud_model extends CI_Model {
         $query = $this->db->get_where($tbl, $kondisi);
         return $query;
     }
+    
+    public function getmultidatabyid($tbl, $field, $id = 0)
+    {
+        if ($id === 0)
+        {
+            $query = $this->db->get($tbl);
+            return $query->result_array();
+        }
+ 
+        $query = $this->db->get_where($tbl, array($field => $id));
+        return $query->row_array();
+    }
 
     function get_data_tabel($tbl = null) {
         $result = $this->db->get($tbl);
@@ -71,8 +83,8 @@ class Crud_model extends CI_Model {
         return $result->result_array();
     }
 
-    function getDataMultiTable($tbl1 = null, $tbl2 = null, $kondisi = null) {
-        $this->db->select('*');
+    function getDataMultiTable($field, $tbl1 = null, $tbl2 = null, $kondisi = null) {
+        $this->db->select($field);
         $this->db->from($tbl2);
         $this->db->join($tbl1, $kondisi, 'inner');
         $result = $this->db->get();

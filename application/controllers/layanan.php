@@ -34,7 +34,7 @@ class Layanan extends CI_Controller {
                 $dataAdd2 = array(
                     'telp' => $this->input->post('telp'),
                     'idlayanan' => $idx
-                    );
+                );
                 $proses = $this->crud_model->add_save('pemroses', $dataAdd2);
                 redirect(base_url() . 'layanan/jnslayanan');
                 break;
@@ -49,7 +49,14 @@ class Layanan extends CI_Controller {
 
             case 'edit':
                 $filter = "id = '$idx'";
-                $data['dtedit'] = $this->crud_model->getwhere('jnslayanan', $filter);
+                $filter1 = "idlayanan = '$idx'";
+                //$data1['dtedit'] = $this->crud_model->getwhere('jnslayanan', $filter);
+                //$data2['dtedit'] = $this->crud_model->getmultidatabyid('pemroses', 'idlayanan', $filter1);
+                $data = array (
+                    'id' => $this->crud_model->getwhere('jnslayanan', $filter),
+                    'telp' => $this->crud_model->getmultidatabyid('pemroses', 'idlayanan', $filter1)
+                );
+
                 $data['judul'] = "EDIT DATA LAYANAN";
                 $this->template->load('template/_hz_template', 'layanan/formJnsLayanan', $data);
                 break;
@@ -61,7 +68,7 @@ class Layanan extends CI_Controller {
                     'nmlayanan' => $this->input->post('nama'),
                     'waktu' => $this->input->post('waktu'),
                 );
-                $dataSet1 = array (
+                $dataSet1 = array(
                     'telp' => $this->input->post('telp'),
                 );
                 $this->crud_model->data_update('jnslayanan', $filter, $dataSet);
@@ -72,9 +79,7 @@ class Layanan extends CI_Controller {
             default :
                 $data['judul'] = "PENGATURAN JENIS LAYANAN";
                 $data['dtlist'] = $this->crud_model->getDataMultiTable(
-                        'jnslayanan',
-                        'pemroses',
-                        'pemroses.idlayanan=jnslayanan.id'
+                        '*', 'jnslayanan', 'pemroses', 'pemroses.idlayanan=jnslayanan.id'
                 );
                 $this->template->load('template/_hz_template', 'layanan/ListJnsLayanan', $data);
         }
