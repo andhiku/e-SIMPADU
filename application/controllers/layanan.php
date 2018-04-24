@@ -50,7 +50,7 @@ class Layanan extends CI_Controller {
             case 'edit':
                 $filter = "id = '$idx'";
                 $filter1 = "idlayanan = '$idx'";
-                //$data1['dtedit'] = $this->crud_model->getwhere('jnslayanan', $filter);
+                //$data['dtedit'] = $this->crud_model->getwhere('jnslayanan', $filter);
                 //$data2['dtedit'] = $this->crud_model->getmultidatabyid('pemroses', 'idlayanan', $filter1);
                 $data = array (
                     'id' => $this->crud_model->getwhere('jnslayanan', $filter),
