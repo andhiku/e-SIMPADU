@@ -100,10 +100,15 @@ class Layanan extends CI_Controller {
                     'pemohon' => $this->input->post('nama'),
                     'jenis' => $this->input->post('jnslayan'),
                     'keterangan' => 'TERDAFTAR',
-                    //'telp' => $this->input->post('telp'),
+                    'telp' => $this->input->post('telp'),
                     'stts' => '0',
                 );
                 $this->db->insert('layanan_tb', $dataAdd);
+                
+                //send sms
+                foreach ($dataAdd->result() as $row) {
+                    
+                }
                 $noreg = $this->crud_model->getwhere('layanan_tb', $telp  = 'noregister');
                 $nopemohon = $this->crud_model->getwhere('layanan_tb', $telp  = 'telp');
                 $msgpemohon = 'Nomor registrasi anda adalah = ' . $noreg;
