@@ -127,6 +127,7 @@ class Layanan extends CI_Controller {
                 redirect(base_url() . 'layanan/daftarlayanan');
                 break;
 
+            // edit & proses belum selesai
             case 'edit':
                 $filter = "id = '$idx'";
                 $data['dwjnslayan'] = $this->crud_model->get_data_tabel('jnslayanan');
