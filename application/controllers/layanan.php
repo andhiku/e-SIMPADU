@@ -106,13 +106,13 @@ class Layanan extends CI_Controller {
                 $this->db->insert('layanan_tb', $dataAdd);
                 
                 //send sms
-                foreach ($dataAdd->result() as $row) {
-                    
-                }
-                $noreg = $this->crud_model->getwhere('layanan_tb', $telp  = 'noregister');
-                $nopemohon = $this->crud_model->getwhere('layanan_tb', $telp  = 'telp');
+                //$this->load->helper('array');
+                $telp = element('telp', $dataAdd);
+                $noreg = element('noregister', $dataAdd);
+                //$noreg = $this->crud_model->getwhere('layanan_tb', $telp  = 'noregister');
+                //$nopemohon = $this->crud_model->getwhere('layanan_tb', $telp  = 'telp');
                 $msgpemohon = 'Nomor registrasi anda adalah = ' . $noreg;
-                $this->sms_model->sendSMS($nopemohon, $msgpemohon); 
+                $this->sms_model->sendSMS($telp, $msgpemohon); 
 
                 redirect(base_url() . 'layanan/daftarlayanan');
                 break;
