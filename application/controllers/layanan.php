@@ -104,7 +104,10 @@ class Layanan extends CI_Controller {
                     'stts' => '0',
                 );
                 $this->db->insert('layanan_tb', $dataAdd);
-                //KIRIM SMS 
+                $noreg = $this->crud_model->getwhere('layanan_tb', $telp  = 'noregister');
+                $nopemohon = $this->crud_model->getwhere('layanan_tb', $telp  = 'telp');
+                $msgpemohon = 'Nomor registrasi anda adalah = ' . $noreg;
+                $this->sms_model->sendSMS($nopemohon, $msgpemohon); 
 
                 redirect(base_url() . 'layanan/daftarlayanan');
                 break;

@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 class Sms_model extends CI_Model {
 
-    public function smssend($nohp, $msg) {
+    public function sendSMS($nohp, $msg) {
         $request = 'username=username &pass = 123456&senderid = Usersenderid &dest_mobileno = '.$nohp.'&message='.$msg.'&response=Y';
         $ch = curl_init('www.smsjust.com/blank/sms/user/urlsms.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -16,7 +16,7 @@ class Sms_model extends CI_Model {
         return $resuponce;
     }
 
-    function sendSMS($nohp, $message) {
+    function smssend($nohp, $message) {
         $no = $nohp;
         $msg = $message; //"ID Pesanan : $invoiceID, jangan lupa transfer ya.. (by agussaputra.com)";
         $url = "https://reguler.zenziva.net/apps/smsapi.php";
