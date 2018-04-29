@@ -24,6 +24,7 @@ $telp = isset($dtedit) ? $rows->telp : '';
         <h4>Form Permohonanan Layanan </h4>
         <form action="<?= $urlset . $form_aksi; ?>" class="form-horizontal" 
               enctype="multipart/form-data" method="post"> 
+            <div id="alert-area" class="alert-danger floadMess"></div>
             <div class="panel-body">
                 <div class="form-group">
                     <label class="col-xs-2 control-label">
@@ -73,7 +74,7 @@ $telp = isset($dtedit) ? $rows->telp : '';
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="this.form.submit()">
+                    <button type="button" class="btn btn-primary" onclick="this.form.submit(); newAlert('Maaf.. , tidak bisa menampilkan pesan ');">
                         <?= $tombol ?>
                     </button>
                 </div>
