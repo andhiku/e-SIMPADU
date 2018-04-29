@@ -52,7 +52,7 @@ class Layanan extends CI_Controller {
                 $filter1 = "idlayanan = '$idx'";
                 //$data['dtedit'] = $this->crud_model->getwhere('jnslayanan', $filter);
                 //$data2['dtedit'] = $this->crud_model->getmultidatabyid('pemroses', 'idlayanan', $filter1);
-                $data = array (
+                $data = array(
                     'id' => $this->crud_model->getwhere('jnslayanan', $filter),
                     'telp' => $this->crud_model->getmultidatabyid('pemroses', 'idlayanan', $filter1)
                 );
@@ -104,15 +104,18 @@ class Layanan extends CI_Controller {
                     'stts' => '0',
                 );
                 $this->db->insert('layanan_tb', $dataAdd);
-                
+                //$noreg = element('noregister', $dataAdd);
+                //core()->set_notification( 'The login you provided appears to be invalid.' . $msgpemohon, '$msg');
+                //core()->set_notification('Sorry, an error has occurred submitting this form.', 'error');
                 //send sms
                 //$this->load->helper('array');
-                $telp = element('telp', $dataAdd);
-                $noreg = element('noregister', $dataAdd);
+                //$telp = element('telp', $dataAdd);
                 //$noreg = $this->crud_model->getwhere('layanan_tb', $telp  = 'noregister');
                 //$nopemohon = $this->crud_model->getwhere('layanan_tb', $telp  = 'telp');
-                $msgpemohon = 'Nomor registrasi anda adalah = ' . $noreg;
-                $this->sms_model->sendSMS($telp, $msgpemohon); 
+                //$msgpemohon = 'Nomor registrasi anda adalah = ' . $noreg;
+                //$this->sms_model->sendSMS($telp, $msgpemohon);
+                //$msgpemroses = 'Anda memiliki 1 laporan yang perlu diproses dengan nomor registrasi = ' . $noreg;
+                //$this->sms_model->sendSMS($tlp, $msgpemroses);
 
                 redirect(base_url() . 'layanan/daftarlayanan');
                 break;

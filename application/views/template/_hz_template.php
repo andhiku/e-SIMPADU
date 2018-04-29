@@ -41,7 +41,18 @@
                 s = (jam.getSeconds() < 10) ? "0" + jam.getSeconds() : jam.getSeconds();
                 document.getElementById("jam").innerHTML = h + ":" + i + ":" + s;
             }
-            var xa = setInterval("show()", 100);</script>
+            var xa = setInterval("show()", 100);
+        </script>
+        <script type="text/javascript" language="javascript">
+            function newAlert(message) {
+                $("#alert-area").append($("<div id='subalert' class='alert alert-success'><p> " + message + " </p></div>"));
+                $("#alert-area").fadeTo(2000, 500).slideUp(500, function () {
+                    $("#alert-area").slideUp(500);
+                    $('#subalert').remove();
+                });
+
+            }
+        </script>
 
 
 

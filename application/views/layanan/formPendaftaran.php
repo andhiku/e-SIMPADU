@@ -74,7 +74,8 @@ $telp = isset($dtedit) ? $rows->telp : '';
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" onclick="this.form.submit()">
-                        <?= $tombol ?></button>
+                        <?= $tombol ?>
+                    </button>
                 </div>
             </div>
         </form>
