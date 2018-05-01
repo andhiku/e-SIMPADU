@@ -36,6 +36,7 @@ class Publik extends CI_Controller {
                     'user_username' => $this->input->post('username'),
                     'user_password' => md5($this->input->post('password')),
                     'telp' => $this->input->post('telp'),
+                    //$data['nmalayanan'] = $this->crud_model->get_data_tabel('jnslayanan'),
                     'user_role' => $this->input->post('userrole')
                 );
                 $this->db->insert('user_tb', $dataAdd);

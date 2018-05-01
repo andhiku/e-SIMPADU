@@ -81,7 +81,6 @@ function item_array($tabel, $kondisi = null) {
     return $rows;
 }
 
-
 function f_get_bulan($data = null) {
     $blpan = array(
         '01' => 'JANUARI',
@@ -133,6 +132,24 @@ function fRoleUser($data = null) {
     } else {
         return $role;
     }
+}
+
+function roleUser($tbl, $idx, $nama ) {
+    // ambil data dari db
+    $this->db->order_by($tbl, 'asc');
+    $result = $this->db->get($tbl);
+
+    // bikin array
+    // please select berikut ini merupakan tambahan saja agar saat pertama
+    // diload akan ditampilkan text please select.
+    $dd[''] = 'Please Select';
+    if ($result->num_rows() > 0) {
+        foreach ($result->result() as $row) {
+            // tentukan idx (sebelah kiri) dan $nama (sebelah kanan)
+            $dd[$row->$idx] = $row->$nama;
+        }
+    }
+    return $dd;
 }
 
 function hitung_waktu($time1 = null, $time2 = null) {
