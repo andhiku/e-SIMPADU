@@ -26,61 +26,42 @@ class Layanan extends CI_Controller {
                 break;
 
             case 'simpan':
-                $dataAdd1 = array(
+                $dataAdd = array(
                     'nmlayanan' => $this->input->post('nama'),
                     'waktu' => $this->input->post('waktu'),
-                );
-                $idx = $this->crud_model->add_multisaveid('jnslayanan', $dataAdd1);
-                $dataAdd2 = array(
                     'telp' => $this->input->post('telp'),
-                    'idlayanan' => $idx
                 );
-                $proses = $this->crud_model->add_save('pemroses', $dataAdd2);
+                $proses = $this->crud_model->add_save('jnslayanan', $dataAdd);
                 redirect(base_url() . 'layanan/jnslayanan');
                 break;
 
             case 'hapus':
                 $filter = "id = '$idx'";
-                $filter1 = "idlayanan = '$idx'";
                 $this->crud_model->hapus_data('jnslayanan', $filter);
-                $this->crud_model->hapus_data('pemroses', $filter);
                 redirect(base_url() . 'layanan/jnslayanan');
                 break;
 
             case 'edit':
                 $filter = "id = '$idx'";
-                $filter1 = "idlayanan = '$idx'";
-                //$data['dtedit'] = $this->crud_model->getwhere('jnslayanan', $filter);
-                //$data2['dtedit'] = $this->crud_model->getmultidatabyid('pemroses', 'idlayanan', $filter1);
-                $data = array(
-                    'id' => $this->crud_model->getwhere('jnslayanan', $filter),
-                    'telp' => $this->crud_model->getmultidatabyid('pemroses', 'idlayanan', $filter1)
-                );
-
+                $data['dtedit'] = $this->crud_model->getwhere('jnslayanan', $filter);
                 $data['judul'] = "EDIT DATA LAYANAN";
                 $this->template->load('template/_hz_template', 'layanan/formJnsLayanan', $data);
                 break;
 
             case 'updatedata':
                 $filter = "id = '$idx'";
-                $filter1 = "idlayanan = '$idx'";
                 $dataSet = array(
                     'nmlayanan' => $this->input->post('nama'),
                     'waktu' => $this->input->post('waktu'),
-                );
-                $dataSet1 = array(
                     'telp' => $this->input->post('telp'),
                 );
                 $this->crud_model->data_update('jnslayanan', $filter, $dataSet);
-                $this->crud_model->data_update('pemroses', $filter1, $dataSet1);
                 redirect(base_url() . 'layanan/jnslayanan');
                 break;
 
             default :
                 $data['judul'] = "PENGATURAN JENIS LAYANAN";
-                $data['dtlist'] = $this->crud_model->getDataMultiTable(
-                        '*', 'jnslayanan', 'pemroses', 'pemroses.idlayanan=jnslayanan.id'
-                );
+                $data['dtlist'] = $this->crud_model->getDataTabel('jnslayanan', 'id = id');
                 $this->template->load('template/_hz_template', 'layanan/ListJnsLayanan', $data);
         }
     }
@@ -138,7 +119,7 @@ class Layanan extends CI_Controller {
                 redirect(base_url() . 'layanan/daftarlayanan');
                 break;
 
-            // edit & proses belum selesai
+            // edit & proses belum
             case 'edit':
                 $filter = "id = '$idx'";
                 $data['dwjnslayan'] = $this->crud_model->get_data_tabel('jnslayanan');
