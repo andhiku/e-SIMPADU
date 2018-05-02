@@ -78,7 +78,9 @@ class Publik extends CI_Controller {
 
             default :
                 $data['judul'] = "PENGATURAN PENGGUNA";
-                $data['dtlist'] = $this->crud_model->get_data_tabel('user_tb');
+                $data['dtlist'] = $this->crud_model->getDataMultiTable(
+                        '*', 'user_tb', 'jnslayanan', 'jnslayanan.id=user_tb.user_role'
+                );
                 $this->template->load('template/_hz_template', 'general/daftar_user', $data);
         }
     }
@@ -99,15 +101,15 @@ class Publik extends CI_Controller {
 
     function informasi() {
         $data['judul'] = "SELAMAT DATANG DI LAYANAN SISTEM TERPADU ";
-        $data['dtlist'] = $this->crud_model->getDataTabel('layanan_tb',"stts != '99'");
+        $data['dtlist'] = $this->crud_model->getDataTabel('layanan_tb', "stts != '99'");
         $this->template->load('template/_ah_template', 'informasi', $data);
     }
-    
-    function refinfo() { 
-        $data['dtlist'] = $this->crud_model->getDataTabel('layanan_tb',"stts != '99'");
-        $this->load->view('retinfo',$data);
+
+    function refinfo() {
+        $data['dtlist'] = $this->crud_model->getDataTabel('layanan_tb', "stts != '99'");
+        $this->load->view('retinfo', $data);
     }
-                
+
     function proses_login() {
         $this->form_validation->set_rules('username', 'username', 'trim|required');
         $this->form_validation->set_rules('password', 'password', 'trim|required');

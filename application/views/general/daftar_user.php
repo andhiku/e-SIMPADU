@@ -41,7 +41,7 @@ $urlset = base_url() . $this->router->class . '/' . $this->router->method . '/';
                                     </td>
                                     <td><?= $rowtr['user_username']; ?></td>
                                     <td><?= $rowtr['user_nama']; ?></td>
-                                    <td><?= $rowtr['user_role']; ?></td>
+                                    <td><?= $rowtr['nmlayanan']; ?></td>
                                     <td><?= $rowtr['last_login']; ?></td>
                                 </tr>
                                 <?php
