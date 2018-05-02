@@ -29,7 +29,6 @@ class Layanan extends CI_Controller {
                 $dataAdd = array(
                     'nmlayanan' => $this->input->post('nama'),
                     'waktu' => $this->input->post('waktu'),
-                    'telp' => $this->input->post('telp'),
                 );
                 $proses = $this->crud_model->add_save('jnslayanan', $dataAdd);
                 redirect(base_url() . 'layanan/jnslayanan');
@@ -53,7 +52,6 @@ class Layanan extends CI_Controller {
                 $dataSet = array(
                     'nmlayanan' => $this->input->post('nama'),
                     'waktu' => $this->input->post('waktu'),
-                    'telp' => $this->input->post('telp'),
                 );
                 $this->crud_model->data_update('jnslayanan', $filter, $dataSet);
                 redirect(base_url() . 'layanan/jnslayanan');
@@ -61,7 +59,9 @@ class Layanan extends CI_Controller {
 
             default :
                 $data['judul'] = "PENGATURAN JENIS LAYANAN";
-                $data['dtlist'] = $this->crud_model->getDataTabel('jnslayanan', 'id = id');
+                $data['dtlist'] = $this->crud_model->getDataMultiTable(
+                        '*', 'jnslayanan', 'user_tb', 'user_tb.user_role=jnslayanan.id'
+                );
                 $this->template->load('template/_hz_template', 'layanan/ListJnsLayanan', $data);
         }
     }
