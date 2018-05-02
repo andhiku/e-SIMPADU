@@ -1,0 +1,3 @@
+http://jagocoding.com/tutorial/377/Dropdown_Berhubungan_Sync_Dropdown_Dengan_CI_MySQL
+
+http://avenir.ro/codeigniter-retrieve-data-from-database/
