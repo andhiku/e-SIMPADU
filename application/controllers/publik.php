@@ -26,6 +26,7 @@ class Publik extends CI_Controller {
         switch ($aksi) {
             case 'tambah':
                 $data['judul'] = "PENAMBAHAN DATA PENGGUNA";
+                $data['dwjnslayan'] = $this->crud_model->get_data_tabel('jnslayanan');
                 $this->template->load('template/_hz_template', 'general/formUser', $data);
                 break;
 
@@ -36,8 +37,7 @@ class Publik extends CI_Controller {
                     'user_username' => $this->input->post('username'),
                     'user_password' => md5($this->input->post('password')),
                     'telp' => $this->input->post('telp'),
-                    //$data['nmalayanan'] = $this->crud_model->get_data_tabel('jnslayanan'),
-                    'user_role' => $this->input->post('userrole')
+                    'user_role' => $this->input->post('user_role')
                 );
                 $this->db->insert('user_tb', $dataAdd);
                 redirect(base_url() . 'publik/pengguna');
@@ -45,6 +45,7 @@ class Publik extends CI_Controller {
 
             case 'edit':
                 $filter = "user_id = '$idx'";
+                $data['dwjnslayan'] = $this->crud_model->get_data_tabel('jnslayanan');
                 $data['dtedit'] = $this->crud_model->getwhere('user_tb', $filter);
                 $data['judul'] = "EDIT DATA PENGGUNA";
                 $this->template->load('template/_hz_template', 'general/formUser', $data);
@@ -60,7 +61,7 @@ class Publik extends CI_Controller {
                         'user_username' => $this->input->post('username'),
                         'user_password' => md5($cekUpdatePasw),
                         'telp' => $this->input->post('telp'),
-                        'user_role' => $this->input->post('userrole')
+                        'user_role' => $this->input->post('user_role')
                     );
                 } else {
                     $dataSet = array(
@@ -68,7 +69,7 @@ class Publik extends CI_Controller {
                         'user_nama' => $this->input->post('nama'),
                         'user_username' => $this->input->post('username'),
                         'telp' => $this->input->post('telp'),
-                        'user_role' => $this->input->post('userrole')
+                        'user_role' => $this->input->post('user_role')
                     );
                 }
                 $this->crud_model->data_update('user_tb', $filter, $dataSet);

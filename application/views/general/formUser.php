@@ -9,7 +9,7 @@ $username = isset($dtedit) ? $rows->user_username : '';
 $passw = isset($dtedit) ? '' : '';
 $telp = isset($dtedit) ? $rows->telp : '';
 $nama = isset($dtedit) ? $rows->user_nama : '';
-$role = isset($dtedit) ? $rows->user_role : '';
+$role_user = isset($dtedit) ? $rows->user_role : '';
 
 //$tgl = isset($dtedit) ? date('d/m/Y', strtotime($rows->tanggal)) : '';
 ?>
@@ -77,12 +77,16 @@ $role = isset($dtedit) ? $rows->user_role : '';
                     </label>
                     <div class="col-xs-3 dropdown">
                         <?php
-                        $opsi = 'class="form-control" data-toggle="dropdown" onKeyPress="return handleEnter(this, event)"';
-                        foreach (fRoleUser() as $id => $data) {
-                            $rolearr[''] = '-- Pilihan Role --';
-                            $rolearr[$id] = $data;
+                        $opti = '';
+                        if (is_array($dwjnslayan) && count($dwjnslayan) > 0) {
+                            foreach ($dwjnslayan as $key) {
+                                $rowid = $key['id'];
+                                $rowdata = $key['nmlayanan'];
+                                $opti[''] = '-- Pilih Jenis Layanan --';
+                                $opti[$rowid] = $rowdata;
+                            }
+                            echo form_dropdown('user_role', $opti, $role_user, 'class="form-control" id="jnslayan"');
                         }
-                        echo form_dropdown('userrole', $rolearr, $role, $opsi);
                         ?>
                     </div>
 

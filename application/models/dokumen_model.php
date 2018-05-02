@@ -124,5 +124,16 @@ class Dokumen_model extends CI_Model {
         $this->upload->do_upload();
         return;
     }
+    
+    function get_job_positions($id, $field, $tbl) { 
+        $result = $this->db->select($id, $field)->get($tbl)->result_array(); 
+ 
+        $array = array(); 
+        foreach($result as $r) { 
+            $array[$r[$id]] = $r[$field]; 
+        } 
+        $array[''] = '-- Pilihan Role --'; 
+        return $array; 
+    }
 
 }
