@@ -22,7 +22,6 @@ $urlset = base_url() . $this->router->class . '/' . $this->router->method . '/';
                     <thead>
                         <tr>
                             <th>Nama Layanan</th>
-                            <th>Nomor Telepon</th>
                             <th colspan="2">Waktu</th>
                         </tr>
                     </thead>
@@ -36,7 +35,6 @@ $urlset = base_url() . $this->router->class . '/' . $this->router->method . '/';
                                            onclick="location.href = '<?= $urlset ?>edit/<?= $rowtr['id'] ?>'">
                                             <?= $rowtr['nmlayanan']; ?></a>
                                     </td>
-                                    <td><?= $rowtr['telp']; ?></td>
                                     <td><?= $rowtr['waktu']; ?>&nbsp;Hari kerja</td>
                                     <td width="6%">
                                         <button type="button" class="btn btn-warning" 

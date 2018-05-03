@@ -24,6 +24,7 @@ $urlset = base_url() . $this->router->class . '/' . $this->router->method . '/';
                             <th>ID. Pengguna</th>
                             <th>Username</th>
                             <th>Nama Pengguna</th>
+                            <th>Nomor Telepon</th>
                             <th>Role</th>
                             <th>Login Terakhir</th>
                         </tr>
@@ -41,6 +42,7 @@ $urlset = base_url() . $this->router->class . '/' . $this->router->method . '/';
                                     </td>
                                     <td><?= $rowtr['user_username']; ?></td>
                                     <td><?= $rowtr['user_nama']; ?></td>
+                                    <td><?= $rowtr['telp']; ?></td>
                                     <td><?= $rowtr['nmlayanan']; ?></td>
                                     <td><?= $rowtr['last_login']; ?></td>
                                 </tr>
