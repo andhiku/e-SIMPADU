@@ -6,7 +6,7 @@ if (!defined('BASEPATH'))
 class Sms_model extends CI_Model {
 
     public function sendSMS($nohp, $msg) {
-        $request = 'username=username &pass = 123456&senderid = Usersenderid &dest_mobileno = '.$nohp.'&message='.$msg.'&response=Y';
+        $request = 'username=username &pass = 123456&senderid = Usersenderid &dest_mobileno = ' . $nohp . '&message=' . $msg . '&response=Y';
         $ch = curl_init('www.smsjust.com/blank/sms/user/urlsms.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
@@ -48,6 +48,13 @@ class Sms_model extends CI_Model {
         curl_setopt($curlHandle, CURLOPT_POST, 1);
         $results = curl_exec($curlHandle);
         curl_close($curlHandle);
+    }
+
+    function stripslashes_deep($value) {
+        $value = is_array($value) ?
+                array_map('stripslashes_deep', $value) :
+                stripslashes($value);
+        return $value;
     }
 
 }
