@@ -74,7 +74,7 @@ $telp = isset($dtedit) ? $rows->telp : '';
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="this.form.submit(); newAlert('Maaf.. , tidak bisa menampilkan pesan ');">
+                        <button type="button" class="btn btn-primary" onclick="newAlert('Maaf, pesan tidak dapat dikirim ');"><!--this.form.submit(); -->
                         <?= $tombol ?>
                     </button>
                 </div>
