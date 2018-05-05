@@ -59,15 +59,13 @@ class Crud_model extends CI_Model {
         $query = $this->db->get_where($tbl, $kondisi);
         return $query;
     }
-    
-    public function getmultidatabyid($tbl, $field, $id = 0)
-    {
-        if ($id === 0)
-        {
+
+    public function getmultidatabyid($tbl, $field, $id = 0) {
+        if ($id === 0) {
             $query = $this->db->get($tbl);
             return $query->result_array();
         }
- 
+
         $query = $this->db->get_where($tbl, array($field => $id));
         return $query->row_array();
     }
@@ -110,7 +108,7 @@ class Crud_model extends CI_Model {
         $this->db->delete($tbl);
         return;
     }
-   
+
     function recTotal($tbl = null, $kondisi = null) {
         if ($kondisi != null) {
             $this->db->where($kondisi);
@@ -142,6 +140,11 @@ class Crud_model extends CI_Model {
         $this->db->order_by('jenis', 'ASC');
         $query = $this->db->get();
         return $query;
+    }
+
+    function success($nomor, $pesan) {
+        $this->session->set_flashdata($nomor, $pesan);
+        return;
     }
 
 }
