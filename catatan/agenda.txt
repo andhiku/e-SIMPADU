@@ -1,0 +1,10 @@
+agenda = menu user selain admin & publik error
+	 notif/alert
+
+
+
+
+
+sendsms to user_tb.userent where prosesno <99 and tglproses>24jam yang isinya idlayanan
+
+kirim sms ke layanan_tb.tlp where prosesno =99
