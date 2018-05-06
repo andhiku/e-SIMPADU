@@ -82,10 +82,9 @@ class Layanan extends CI_Controller {
                     'telp' => $this->input->post('telp'),
                     'stts' => '0',
                 );
-                $this->db->insert('layanan_tb', $dataAdd);
-                $this->sms_model->kirimSMS($dataAdd[5], 'Nomor registrasi permohonan Anda adalah' . $dataAdd[1], $return = '0');
+                //$this->db->insert('layanan_tb', $dataAdd);
+                $this->session->set_flashdata('message', 'anda berhasil menginput data');
                 redirect(base_url() . 'layanan/daftarlayanan');
-                break;
 
             case 'updatedata':
                 $filter = "id = '$idx'";

@@ -1,3 +1,13 @@
 http://jagocoding.com/tutorial/377/Dropdown_Berhubungan_Sync_Dropdown_Dengan_CI_MySQL
 
 http://avenir.ro/codeigniter-retrieve-data-from-database/
+
+
+<!-- Creating Real Time Notification System in PHP and AJAX -->
+https://www.cloudways.com/blog/real-time-php-notification-system/
+https://github.com/shahroznawaz/php-notifications
+Live Demo: http://phpstack-21306-71265-206743.cloudwaysapps.com/noti/
+
+http://www.myphptutorials.com/questions/notification-setiap-ada-data-baru-yang-masuk-ke-salah-satu-tabel-di-database_105.html
+http://danangnurfauzi.net/tutorial/membuat-notifikasi-sederhana-menggunakan-flashdata-di-codeigniter/
+http://harviacode.com/2015/04/05/membuat-notifikasi-pesan-berhasil/
