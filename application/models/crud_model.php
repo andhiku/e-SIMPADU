@@ -142,9 +142,4 @@ class Crud_model extends CI_Model {
         return $query;
     }
 
-    function success($nomor, $pesan) {
-        $this->session->set_flashdata($nomor, $pesan);
-        return;
-    }
-
 }
