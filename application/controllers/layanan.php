@@ -88,6 +88,7 @@ class Layanan extends CI_Controller {
                 //sms gateway start
                 function kirim_sms() {
                     $this->load->library('smsgateway');
+                    //$no_hp = $dataAdd[5];
                     $no_hp = $this->input->post('no_hp');
 
                     $numbers = array();

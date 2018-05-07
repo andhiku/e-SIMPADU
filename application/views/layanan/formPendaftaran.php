@@ -74,7 +74,7 @@ $telp = isset($dtedit) ? $rows->telp : '';
                     </div>
                 </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="this.form.submit(); newAlert('aha');"> <!-- on submit -->
+                        <button type="button" class="btn btn-primary" onclick="this.form.submit(); newAlert('TERSIMPAN');"> <!-- on submit -->
                         <?= $tombol ?>
                     </button>
                 </div>
