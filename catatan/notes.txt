@@ -16,8 +16,6 @@ http://danangnurfauzi.net/tutorial/membuat-notifikasi-sederhana-menggunakan-flas
 http://harviacode.com/2015/04/05/membuat-notifikasi-pesan-berhasil/
 
 
-sms
-https://github.com/aldiferdiyan/Codeigniter-SMS-Gateway-Gammu
 
 sms gateway
 https://andriyandriyan.com/sms-gateway-dengan-smsgateway-dan-codeigniter

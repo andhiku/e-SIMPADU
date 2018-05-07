@@ -97,7 +97,7 @@ class Layanan extends CI_Controller {
                         }
                     }
 
-                    $deviceID = 70571;
+                    $deviceID = 89081;
                     $message = $this->input->post('isi_pesan');
 
                     $result = $this->smsgateway->sendMessageToManyNumbers($numbers, $message, $deviceID);
