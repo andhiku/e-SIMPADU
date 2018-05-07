@@ -74,15 +74,44 @@ class Layanan extends CI_Controller {
 
             case 'simpan':
                 $dataAdd = array(
-                    'tglberkas' => post_tgl_id($this->input->post('tglusul')),
-                    'noregister' => random(12),
-                    'pemohon' => $this->input->post('nama'),
-                    'jenis' => $this->input->post('jnslayan'),
-                    'keterangan' => 'TERDAFTAR',
-                    'telp' => $this->input->post('telp'),
-                    'stts' => '0',
+                'tglberkas' => post_tgl_id($this->input->post('tglusul')),
+                'noregister' => random(12),
+                'pemohon' => $this->input->post('nama'),
+                'jenis' => $this->input->post('jnslayan'),
+                'keterangan' => 'TERDAFTAR',
+                'telp' => $this->input->post('telp'),
+                'stts' => '0',
                 );
-                $this->db->insert('layanan_tb', $dataAdd);
+
+                //$this->db->insert('layanan_tb', $dataAdd);
+                
+                //sms gateway start
+                function kirim_sms() {
+                    $this->load->library('smsgateway');
+                    $no_hp = $this->input->post('no_hp');
+
+                    $numbers = array();
+                    foreach ($no_hp as $key => $value) {
+                        if ($value != '') {
+                            array_push($numbers, $value);
+                        }
+                    }
+
+                    $deviceID = 70571;
+                    $message = $this->input->post('isi_pesan');
+
+                    $result = $this->smsgateway->sendMessageToManyNumbers($numbers, $message, $deviceID);
+                    if (count($result['response']['result']['success']) > 0) {
+                        $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil mengirim sms</div>');
+                    } else {
+                        $this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal mengirim sms</div>');
+                    }
+
+                    redirect('sms', 'refresh');
+                }
+                
+                // end of sms gateway
+
                 redirect(base_url() . 'layanan/daftarlayanan');
 
             case 'updatedata':

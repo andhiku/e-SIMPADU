@@ -18,3 +18,12 @@ http://harviacode.com/2015/04/05/membuat-notifikasi-pesan-berhasil/
 
 sms
 https://github.com/aldiferdiyan/Codeigniter-SMS-Gateway-Gammu
+
+sms gateway
+https://andriyandriyan.com/sms-gateway-dengan-smsgateway-dan-codeigniter
+
+get array from another array
+https://stackoverflow.com/questions/22986606/get-a-key-of-an-array-that-is-inside-another-array-and-contains-value
+
+scripts php sms gateway berbasis web
+http://www.freescriptsweb.com/2016/09/scripts-php-sms-gateway-berbasis-web.html
