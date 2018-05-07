@@ -74,7 +74,7 @@ $telp = isset($dtedit) ? $rows->telp : '';
                     </div>
                 </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="this.form.submit(); newAlert(<?php echo $this->session->flashdata('message'); ?>);"> <!-- on submit -->
+                        <button type="button" class="btn btn-primary" onclick="this.form.submit(); newAlert('aha');"> <!-- on submit -->
                         <?= $tombol ?>
                     </button>
                 </div>

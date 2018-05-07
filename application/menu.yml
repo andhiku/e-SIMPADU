@@ -9,49 +9,502 @@ admin:
   Laporan: laporan/rekaplayanan
   Logout: publik/logout
   
-op1:
+1:
   Informasi: publik/informasi
   Registrasi/ Verifikasi: layanan/daftarlayanan
   Logout: publik/logout
 
-op2:
+2:
   Informasi: publik/informasi
   Registrasi/ Verifikasi: layanan/daftarlayanan
   Logout: publik/logout
 
-op3:
+3:
   Informasi: publik/informasi
   Registrasi/ Verifikasi: layanan/daftarlayanan
   Logout: publik/logout
 
-op4:
+4:
   Informasi: publik/informasi
   Registrasi/ Verifikasi: layanan/daftarlayanan
   Logout: publik/logout
 
-op5:
+5:
   Informasi: publik/informasi
   Registrasi/ Verifikasi: layanan/daftarlayanan
   Logout: publik/logout
 
-op6:
+6:
   Informasi: publik/informasi
   Registrasi/ Verifikasi: layanan/daftarlayanan
   Logout: publik/logout
 
-op7:
+7:
   Informasi: publik/informasi
   Registrasi/ Verifikasi: layanan/daftarlayanan
   Logout: publik/logout
 
-op8:
+8:
   Informasi: publik/informasi
   Registrasi/ Verifikasi: layanan/daftarlayanan
   Logout: publik/logout
 
-op9:
+9:
   Informasi: publik/informasi
   Registrasi/ Verifikasi: layanan/daftarlayanan
   Logout: publik/logout
 
+10:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
   
+11:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+12:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+13:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+  
+14:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+  
+15:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+ 
+16:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+ 
+17:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+18:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+19:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+20:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+21:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+22:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+23:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+24:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+25:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+26:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+27:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+28:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+29:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+30:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+31:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+32:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+33:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+34:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+35:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+36:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+37:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+38:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+39:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+40:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+41:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+42:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+43:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+44:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+45:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+46:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+47:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+48:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+49:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+50:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+51:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+52:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+53:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+54:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+55:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+56:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+57:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+58:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+59:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+60:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+61:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+62:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+63:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+64:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+65:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+66:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+67:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+68:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+69:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+70:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+71:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+72:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+73:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+74:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+75:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+76:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+77:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+78:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+79:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+80:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+81:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+82:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+83:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+84:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+85:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+86:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+87:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+88:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+89:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+90:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+91:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+92:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+93:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+94:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+95:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+96:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+97:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+98:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+99:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+
+100:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+

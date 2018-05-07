@@ -82,8 +82,7 @@ class Layanan extends CI_Controller {
                     'telp' => $this->input->post('telp'),
                     'stts' => '0',
                 );
-                //$this->db->insert('layanan_tb', $dataAdd);
-                $this->session->set_flashdata('message', 'anda berhasil menginput data');
+                $this->db->insert('layanan_tb', $dataAdd);
                 redirect(base_url() . 'layanan/daftarlayanan');
 
             case 'updatedata':
