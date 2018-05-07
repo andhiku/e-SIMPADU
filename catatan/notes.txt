@@ -25,3 +25,6 @@ https://stackoverflow.com/questions/22986606/get-a-key-of-an-array-that-is-insid
 
 scripts php sms gateway berbasis web
 http://www.freescriptsweb.com/2016/09/scripts-php-sms-gateway-berbasis-web.html
+
+post element array to 2 table php
+https://stackoverflow.com/questions/2433727/submitting-a-multidimensional-array-via-post-with-php
