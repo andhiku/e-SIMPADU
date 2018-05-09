@@ -99,7 +99,8 @@ class Layanan extends CI_Controller {
                     }
 
                     $deviceID = 89081;
-                    $message = $this->input->post('isi_pesan');
+                    $isi_pesan = 'Nomor registrasi Anda adalah ' . $dataAdd[1];
+                    $message = $this->input->post($isi_pesan);
 
                     $result = $this->smsgateway->sendMessageToManyNumbers($numbers, $message, $deviceID);
                     if (count($result['response']['result']['success']) > 0) {
@@ -108,7 +109,7 @@ class Layanan extends CI_Controller {
                         $this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal mengirim sms</div>');
                     }
 
-                    redirect('sms', 'refresh');
+                    //redirect('sms', 'refresh');
                 }
                 
                 // end of sms gateway
