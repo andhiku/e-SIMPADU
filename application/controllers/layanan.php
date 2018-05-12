@@ -74,47 +74,23 @@ class Layanan extends CI_Controller {
 
             case 'simpan':
                 $dataAdd = array(
-                'tglberkas' => post_tgl_id($this->input->post('tglusul')),
-                'noregister' => random(12),
-                'pemohon' => $this->input->post('nama'),
-                'jenis' => $this->input->post('jnslayan'),
-                'keterangan' => 'TERDAFTAR',
-                'telp' => $this->input->post('telp'),
-                'stts' => '0',
+                    'tglberkas' => post_tgl_id($this->input->post('tglusul')),
+                    'noregister' => random(12),
+                    'pemohon' => $this->input->post('nama'),
+                    'jenis' => $this->input->post('jnslayan'),
+                    'keterangan' => 'TERDAFTAR',
+                    'telp' => $this->input->post('telp'),
+                    'stts' => '0',
                 );
+                    $dataku[] = $dataAdd[1];
+                    $dataku[] = $dataAdd[5];
 
                 //$this->db->insert('layanan_tb', $dataAdd);
-                
                 //sms gateway start
-                function kirim_sms() {
-                    $this->load->library('smsgateway');
-                    //$no_hp = $dataAdd[5];
-                    $no_hp = $this->input->post('no_hp');
-
-                    $numbers = array();
-                    foreach ($no_hp as $key => $value) {
-                        if ($value != '') {
-                            array_push($numbers, $value);
-                        }
-                    }
-
-                    $deviceID = 89081;
-                    $isi_pesan = 'Nomor registrasi Anda adalah ' . $dataAdd[1];
-                    $message = $this->input->post($isi_pesan);
-
-                    $result = $this->smsgateway->sendMessageToManyNumbers($numbers, $message, $deviceID);
-                    if (count($result['response']['result']['success']) > 0) {
-                        $this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil mengirim sms</div>');
-                    } else {
-                        $this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal mengirim sms</div>');
-                    }
-
-                    //redirect('sms', 'refresh');
-                }
-                
+                echo json_encode($dataku);
                 // end of sms gateway
 
-                redirect(base_url() . 'layanan/daftarlayanan');
+                //redirect(base_url() . 'layanan/daftarlayanan');
 
             case 'updatedata':
                 $filter = "id = '$idx'";

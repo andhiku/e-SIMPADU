@@ -19,6 +19,9 @@ http://harviacode.com/2015/04/05/membuat-notifikasi-pesan-berhasil/
 
 sms gateway
 https://andriyandriyan.com/sms-gateway-dengan-smsgateway-dan-codeigniter
+http://www.kursus-membuat-web.com/php/tips/cara_membuat_aplikasi_sms_gateway_sendiri_dengan_gammu_dan_php.php
+http://www.ozekisms.com/index.php?owpn=327
+http://www.andrianext.web.id/2016/09/membuat-sms-gateway-dengan-gammu-php-mysql-di-windows.html
 
 get array from another array
 https://stackoverflow.com/questions/22986606/get-a-key-of-an-array-that-is-inside-another-array-and-contains-value
