@@ -135,5 +135,12 @@ class Dokumen_model extends CI_Model {
         $array[''] = '-- Pilihan Role --'; 
         return $array; 
     }
+    
+    function lastSms($id, $tbl) {
+        $dt = date('Y-m-d h:i:s', time());
+        //$sql_db = "update user_tb set last_login = '$dt' where user_id='$id'";
+        $sql_db = "update $tbl set lastSms = '$dt' where user_id='$id'";
+        return mysql_query($sql_db);
+    }
 
 }
