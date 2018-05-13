@@ -82,12 +82,12 @@ class Layanan extends CI_Controller {
                     'telp' => $this->input->post('telp'),
                     'stts' => '0',
                 );
-                    $dataku[] = $dataAdd[1];
-                    $dataku[] = $dataAdd[5];
+                    $noreg = $dataAdd[1];
+                    $telp = $dataAdd[5];
 
                 //$this->db->insert('layanan_tb', $dataAdd);
                 //sms gateway start
-                echo json_encode($dataku);
+                print_r ($noreg . $telp);
                 // end of sms gateway
 
                 //redirect(base_url() . 'layanan/daftarlayanan');
