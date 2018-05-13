@@ -80,7 +80,7 @@ class Layanan extends CI_Controller {
                     'jenis' => $this->input->post('jnslayan'),
                     'keterangan' => 'TERDAFTAR',
                     'telp' => $this->input->post('telp'),
-                    'stts' => '0',
+                    'stts' => '0',                 
                 );
                     $noreg = $dataAdd[1];
                     $telp = $dataAdd[5];
