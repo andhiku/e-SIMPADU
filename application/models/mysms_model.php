@@ -375,6 +375,12 @@ Class Mysms_Model extends Model {
         $data = ['status' => 'terkirim'];
         $this->db->where('ID', $ID)->update('schedule', $data);
     }
+    
+    function waktu_sms($id) {
+        $dt = date('Y-m-d h:i:s', time());
+        $sql_db = "update layanan_tb set lastsms = '$dt' where id='$id'";
+        return mysql_query($sql_db);
+    }
 
 }
 

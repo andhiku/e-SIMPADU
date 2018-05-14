@@ -80,17 +80,18 @@ class Layanan extends CI_Controller {
                     'jenis' => $this->input->post('jnslayan'),
                     'keterangan' => 'TERDAFTAR',
                     'telp' => $this->input->post('telp'),
-                    'stts' => '0',                 
+                    'stts' => '0',
                 );
-                    $noreg = $dataAdd[1];
-                    $telp = $dataAdd[5];
-
-                //$this->db->insert('layanan_tb', $dataAdd);
+                
+                //insert last sms
+                $now = date('Y-m-d H:i:s');
+                $this->db->set('lastsms', $now);
+                
+                $this->db->insert('layanan_tb', $dataAdd);
                 //sms gateway start
-                print_r ($noreg . $telp);
+                
                 // end of sms gateway
-
-                //redirect(base_url() . 'layanan/daftarlayanan');
+                redirect(base_url() . 'layanan/daftarlayanan');
 
             case 'updatedata':
                 $filter = "id = '$idx'";
@@ -144,6 +145,8 @@ class Layanan extends CI_Controller {
                     'keterangan' => $this->input->post('keter'),
                     'stts' => $prosesset
                 );
+                $now = date('Y-m-d H:i:s');
+                $this->db->set('lastsms', $now);
                 $this->crud_model->data_update('layanan_tb', $filter, $dataSet);
 
                 redirect(base_url() . 'layanan/daftarlayanan');
