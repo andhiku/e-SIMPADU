@@ -1,5 +1,5 @@
-agenda = laporan
-	 notif/alert
+agenda =  v   laporan
+          x   notif/alert -> create scheduler sms where lastsms > 24jam
 
 
 
@@ -7,4 +7,4 @@ agenda = laporan
 
 sendsms to user_tb.userent where prosesno <99 and tglproses>24jam yang isinya idlayanan
 
-kirim sms ke layanan_tb.tlp where prosesno =99
+execute file to layanan_tb.tlp where stts < 99 and lastsms > 24jam

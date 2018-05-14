@@ -102,6 +102,8 @@ class Publik extends CI_Controller {
     function informasi() {
         $data['judul'] = "SELAMAT DATANG DI LAYANAN SISTEM TERPADU ";
         $data['dtlist'] = $this->crud_model->getDataTabel('layanan_tb', "stts != '99'");
+        //run sms api where $kondisi
+        exec("php /path/to/script.php > /dev/null &");
         $this->template->load('template/_ah_template', 'informasi', $data);
     }
 

@@ -1,9 +1,9 @@
 tes php
 http://phptester.net/
 
-http://jagocoding.com/tutorial/377/Dropdown_Berhubungan_Sync_Dropdown_Dengan_CI_MySQL
+scheduled sms
+https://www.playvg.com/2017/11/download-script-program-sms-gateway.html
 
-http://avenir.ro/codeigniter-retrieve-data-from-database/
 
 
 <!-- Creating Real Time Notification System in PHP and AJAX -->
@@ -31,3 +31,9 @@ http://www.freescriptsweb.com/2016/09/scripts-php-sms-gateway-berbasis-web.html
 
 post element array to 2 table php
 https://stackoverflow.com/questions/2433727/submitting-a-multidimensional-array-via-post-with-php
+
+http://programmermania.blogspot.co.id/2015/04/sms-gateway-php-mysql-source-code.html
+
+
+Select TOP 1 ID, Nm_kota, Nm_Propinsi, Date_Stamp From mskota
+where id NOT IN (Select TOP 10 id From MsKota ) AND Nm_Kota = ‘KUNINGAN’ ORDER BY Date_Stamp Desc
