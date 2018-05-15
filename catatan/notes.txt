@@ -1,6 +1,9 @@
 tes php
 http://phptester.net/
 
+Macam-macam perintah MySQL dan Fungsinya
+https://www.angon.co.id/news/phpmysql/macam-macam-query-mysql-dan-fungsinya
+
 scheduled sms
 https://www.playvg.com/2017/11/download-script-program-sms-gateway.html
 

@@ -84,8 +84,8 @@ class Layanan extends CI_Controller {
                 );
                 
                 //insert last sms
-                $now = date('Y-m-d H:i:s');
-                $this->db->set('lastsms', $now);
+                //$now = date('Y-m-d H:i:s');
+                //$this->db->set('lastsms', $now);
                 
                 $this->db->insert('layanan_tb', $dataAdd);
                 //sms gateway start
