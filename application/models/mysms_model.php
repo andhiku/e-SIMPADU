@@ -382,8 +382,19 @@ Class Mysms_Model extends Model {
         return mysql_query($sql_db);
     }
     
+    function sms() {
+        $noreg = 'select * from layanan_tb where id = telp';
+        $dtpemohon = [
+            'jnslayanan'        => 'id',
+            'telp'              => 'telp',
+            'pesan'             => 'Nomor registrasi Anda adalah ' . $noreg
+        ];
+        //$idx = ;
+        return $dtpemohon;
+    }
+            
     function api() {
-        $api = $this->sendsms;
+        $api = $this->sms;
         
     }
 

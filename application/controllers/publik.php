@@ -103,6 +103,8 @@ class Publik extends CI_Controller {
         $data['judul'] = "SELAMAT DATANG DI LAYANAN SISTEM TERPADU ";
         $data['dtlist'] = $this->crud_model->getDataTabel('layanan_tb', "stts != '99'");
         //run sms api where $kondisi
+        $jadwal = 'SELECT * FROM layanan_Tb WHERE lastsms >= now() - INTERVAL 1 DAY and stts < 99';
+        //exec($jadwal);
         //exec("php /path/to/script.php > /dev/null &");
         $this->template->load('template/_ah_template', 'informasi', $data);
     }

@@ -65,7 +65,6 @@ class Crud_model extends CI_Model {
             $query = $this->db->get($tbl);
             return $query->result_array();
         }
-
         $query = $this->db->get_where($tbl, array($field => $id));
         return $query->row_array();
     }
