@@ -381,6 +381,11 @@ Class Mysms_Model extends Model {
         $sql_db = "update layanan_tb set lastsms = '$dt' where id='$id'";
         return mysql_query($sql_db);
     }
+    
+    function api() {
+        $api = $this->sendsms;
+        
+    }
 
 }
 
