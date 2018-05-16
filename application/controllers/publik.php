@@ -102,10 +102,33 @@ class Publik extends CI_Controller {
     function informasi() {
         $data['judul'] = "SELAMAT DATANG DI LAYANAN SISTEM TERPADU ";
         $data['dtlist'] = $this->crud_model->getDataTabel('layanan_tb', "stts != '99'");
-        //run sms api where $kondisi
-        $jadwal = 'SELECT * FROM layanan_Tb WHERE lastsms >= now() - INTERVAL 1 DAY and stts < 99';
-        //exec($jadwal);
-        //exec("php /path/to/script.php > /dev/null &");
+
+        // sms gateway start
+        $getjadwal = $this->crud_model->getJadwalKosong();
+        $this->crud_model->getJadwal();
+        
+        if ($getjadwal == '0000-00-00 00:00:00') {
+            $to = 'nobody@example.com';
+            $subject = 'the subject';
+            $message = 'hello';
+//            $headers = 'From: webmaster@example.com' . "\r\n" .
+//                    'Reply-To: webmaster@example.com' . "\r\n" .
+//                    'X-Mailer: PHP/' . phpversion();
+
+            mail($to, $subject, $message);
+        } else {
+            
+        }
+        //insert last sms
+        $now = date('Y-m-d H:i:s');
+        $perbarui = $this->db->set('lastsms', $now);
+
+        //$filter = "id = '$idx'";
+        //$this->crud_model->data_update('layanan_tb', $filter, $perbarui);
+        //exec("d:/path/to/php.exe d:/wamp/www/diplomski/program/defender/tester.php", $output);
+        //print_r($output);
+        // end of sms gateway
+
         $this->template->load('template/_ah_template', 'informasi', $data);
     }
 
