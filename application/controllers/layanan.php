@@ -82,15 +82,7 @@ class Layanan extends CI_Controller {
                     'telp' => $this->input->post('telp'),
                     'stts' => '0',
                 );
-                
-                //insert last sms
-                //$now = date('Y-m-d H:i:s');
-                //$this->db->set('lastsms', $now);
-                
                 $this->db->insert('layanan_tb', $dataAdd);
-                //sms gateway start
-                
-                // end of sms gateway
                 redirect(base_url() . 'layanan/daftarlayanan');
 
             case 'updatedata':
