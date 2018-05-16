@@ -106,16 +106,19 @@ class Publik extends CI_Controller {
         // sms gateway start
         $getjadwal = $this->crud_model->getJadwalKosong();
         $this->crud_model->getJadwal();
-        
+
         if ($getjadwal == '0000-00-00 00:00:00') {
-            $to = 'nobody@example.com';
-            $subject = 'the subject';
-            $message = 'hello';
+            $idx = array(
+            $no = $this->crud_model->getJadwalKosong('telp'),
+            $noreg = $this->crud_model->getJadwalKosong('telp')
+            )
+
+            $message = 'nomor registrasi anda adalah ' . $noreg;
 //            $headers = 'From: webmaster@example.com' . "\r\n" .
 //                    'Reply-To: webmaster@example.com' . "\r\n" .
 //                    'X-Mailer: PHP/' . phpversion();
 
-            mail($to, $subject, $message);
+            mail($no, $message);
         } else {
             
         }

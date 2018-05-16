@@ -383,7 +383,7 @@ Class Mysms_Model extends Model {
     }
     
     function sms() {
-        $noreg = 'select * from layanan_tb where id = telp';
+        $noreg = $this->crud_model->getJadwal('telp');
         $dtpemohon = [
             'jnslayanan'        => 'id',
             'telp'              => 'telp',
