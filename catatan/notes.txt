@@ -1,3 +1,5 @@
+https://upyes.wordpress.com/2012/08/31/active-record-membentuk-hasil-query-dengan-result/
+
 tes php
 http://phptester.net/
 
