@@ -123,8 +123,13 @@ class Publik extends CI_Controller {
             //$this->crud_model->add_save('layanan_tb', $perbarui);
             //echo $getjadwal;
         } else {
-            $xx = $getjadwal->row();
-            echo $xx->pemohon;
+            foreach ($getjadwal->result() as $row) {
+                echo $row->id;
+                echo $row->pemohon;
+                echo $row->telp;
+            }
+            //$xx = $getjadwal->row();
+            //echo $xx->pemohon;
             //insert last sms
             //$now = date('Y-m-d H:i:s');
             //$perbarui = $this->db->set('lastsms', $now);

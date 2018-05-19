@@ -155,6 +155,7 @@ class Crud_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('layanan_tb');
         $this->db->where('lastsms = 0');
+        $this->db->where('stts !=', '99');
         $result = $this->db->get();
         return $result;//->result_array(); --result array menampilkan semua data pada echo json_encode
     }
