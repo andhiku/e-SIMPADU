@@ -104,61 +104,31 @@ class Publik extends CI_Controller {
         $data['dtlist'] = $this->crud_model->getDataTabel('layanan_tb', "stts != '99'");
 
 //        sms gateway start
+        //$stts = $this->crud_model->getwhere('stts !=', '99');
         $getjadwal = $this->crud_model->getJadwalKosong();
-        //$this->crud_model->getJadwal(0);
-//        insert last sms
-        $now = date('Y-m-d H:i:s');
-        $perbarui = $this->db->set('lastsms', $now);
 
-        if ($getjadwal == '0000-00-00 00:00:00') {
-//            $idx = array(
-            //$no = $this->crud_model->getJadwalKosong('telp');
-            //$noreg = $this->crud_model->getJadwalKosong('telp');
-//            )
-            //$message = 'nomor registrasi anda adalah ' . $noreg;
-//            $headers = 'From: webmaster@example.com' . "\r\n" .
-//                    'Reply-To: webmaster@example.com' . "\r\n" .
-//                    'X-Mailer: PHP/' . phpversion();
-            //$mail($no, $message);
-            //$this->crud_model->add_save('layanan_tb', $perbarui);
-            //echo $getjadwal;
-        } else {
-            foreach ($getjadwal->result() as $row) {
-                echo $row->id;
-                echo $row->pemohon;
-                echo $row->telp;
-            }
-            //$xx = $getjadwal->row();
-            //echo $xx->pemohon;
-            //insert last sms
-            //$now = date('Y-m-d H:i:s');
-            //$perbarui = $this->db->set('lastsms', $now);
-            //
-            //echo json_encode($getjadwal);
-//            $hasil = array(); // create array variable
+        if ($getjadwal == '0') {
 //            foreach ($getjadwal->result() as $row) {
-//                $hasil[] = array(
-//                    $xx->id,
-//                    $xx->noregister,
-//                    $xx->keterangan,
-//                    $xx->telp,
-//                    $xx->stts,
-//                    $xx->lastsms,
-//                ); // assign data to array variable
+//                echo $row->id;
+//                echo $row->noregister;
+//                echo $row->pemohon;
+//                echo $row->jenis;
+//                echo $row->keterangan;
+//                echo $row->telp;
 //            }
-//            $data = array(
-//                'data' => [$hasil],
-//            );
-//            echo json_encode($data);
+        } else {
+            $xx = $getjadwal->row();
+            $id = $xx->id;
+            $pemohon = $xx->pemohon;
+            $noreg = $xx->noregister;
+            $ket = $xx->keterangan;
+            $telp = $xx->telp;
+            echo $id . '. Kepada Yth. ' . $pemohon . '. Nomor registrasi anda adalah ' . $noreg . '. Status saat ini adalah ' . $ket;
+            //insert last sms
+            $now = date('Y-m-d H:i:s');
+            $perbarui = $this->db->set('lastsms', $now);
+            $this->crud_model->data_update('layanan_tb', $id, $perbarui);
         }
-
-
-        //$filter = "id = '$idx'";
-        //$this->crud_model->data_update('layanan_tb', $filter, $perbarui);
-        //exec("d:/path/to/php.exe d:/wamp/www/diplomski/program/defender/tester.php", $output);
-        //print_r($output);
-        // end of sms gateway
-
         $this->template->load('template/_ah_template', 'informasi', $data);
     }
 
