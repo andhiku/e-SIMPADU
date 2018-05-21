@@ -160,4 +160,11 @@ class Crud_model extends CI_Model {
         return $result;//->result_array(); --result array menampilkan semua data pada echo json_encode
     }
     
+    function addLastSms ($idx) {
+            $now = date('Y-m-d H:i:s');
+            $this->db->set('lastsms', $now);
+            $this->db->where('id' , $idx);
+            $this->db->update('layanan_tb');
+    }
+    
  }

@@ -115,7 +115,7 @@ class Publik extends CI_Controller {
             $noreg = $xx->noregister;
             $ket = $xx->keterangan;
             $telp = $xx->telp;
-            
+
             echo $id;
 //            foreach ($getjadwal->result() as $row) {
 //                echo $row->id;
@@ -134,10 +134,11 @@ class Publik extends CI_Controller {
             $telp = $xx->telp;
             echo $id . '. Kepada Yth. ' . $pemohon . '. Nomor registrasi anda adalah ' . $noreg . '. Status saat ini adalah ' . $ket;
 //            insert last sms
-            $now = date('Y-m-d H:i:s');
-            $this->db->set('lastsms', $now);
-            $this->db->where('id' , $id);
-            $this->db->update('layanan_tb');
+            $this->crud_model->addLastSms($id);
+//            $now = date('Y-m-d H:i:s');
+//            $this->db->set('lastsms', $now);
+//            $this->db->where('id' , $id);
+//            $this->db->update('layanan_tb');
         } else {
             echo 'tidak ada data yang ditampilkan';
         }
