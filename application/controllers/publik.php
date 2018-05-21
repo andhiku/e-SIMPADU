@@ -132,15 +132,16 @@ class Publik extends CI_Controller {
             $noreg = $xx->noregister;
             $ket = $xx->keterangan;
             $telp = $xx->telp;
-            echo $id . '. Kepada Yth. ' . $pemohon
-            . '. Nomor registrasi anda adalah ' . $noreg
-            . '. Status saat ini adalah ' . $ket;
+//            echo $id . '. Kepada Yth. ' . $pemohon
+//            . '. Nomor registrasi anda adalah ' . $noreg
+//            . '. Status saat ini adalah ' . $ket;
 //            insert last sms
-            $this->crud_model->addLastSms($id);
+//            $tampil = $this->crud_model->addLastSms($id);
         } else {
             echo 'tidak ada data yang ditampilkan';
         }
-        $this->template->load('template/_ah_template', 'informasi', $data);
+        $tampil = $this->crud_model->addLastSms($id);
+        $this->template->load('template/_ah_template', 'informasi', $data, $tampil);
     }
 
     function refinfo() {
