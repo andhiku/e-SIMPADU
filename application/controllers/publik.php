@@ -104,10 +104,19 @@ class Publik extends CI_Controller {
         $data['dtlist'] = $this->crud_model->getDataTabel('layanan_tb', "stts != '99'");
 
 //        sms gateway start
-        //$stts = $this->crud_model->getwhere('stts !=', '99');
-        $getjadwal = $this->crud_model->getJadwalKosong();
+        $getjadwal = $this->crud_model->getJadwalKosong('lastsms');
+        $getjadwal1d = $this->crud_model->getJadwal();
+        $semua = $this->crud_model->getJadwalKosong('*');
 
-        if ($getjadwal == '0') {
+        if ($getjadwal === 0) {
+            $xx = $semua->row();
+            $id = $xx->id;
+            $pemohon = $xx->pemohon;
+            $noreg = $xx->noregister;
+            $ket = $xx->keterangan;
+            $telp = $xx->telp;
+            
+            echo $id;
 //            foreach ($getjadwal->result() as $row) {
 //                echo $row->id;
 //                echo $row->noregister;
@@ -116,18 +125,21 @@ class Publik extends CI_Controller {
 //                echo $row->keterangan;
 //                echo $row->telp;
 //            }
-        } else {
-            $xx = $getjadwal->row();
+        } elseif ($getjadwal1d) {
+            $xx = $semua->row();
             $id = $xx->id;
             $pemohon = $xx->pemohon;
             $noreg = $xx->noregister;
             $ket = $xx->keterangan;
             $telp = $xx->telp;
             echo $id . '. Kepada Yth. ' . $pemohon . '. Nomor registrasi anda adalah ' . $noreg . '. Status saat ini adalah ' . $ket;
-            //insert last sms
+//            insert last sms
             $now = date('Y-m-d H:i:s');
-            $perbarui = $this->db->set('lastsms', $now);
-            $this->crud_model->data_update('layanan_tb', $id, $perbarui);
+            $this->db->set('lastsms', $now);
+            $this->db->where('id' , $id);
+            $this->db->update('layanan_tb');
+        } else {
+            echo 'tidak ada data yang ditampilkan';
         }
         $this->template->load('template/_ah_template', 'informasi', $data);
     }
