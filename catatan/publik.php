@@ -103,6 +103,42 @@ class Publik extends CI_Controller {
         $data['judul'] = "SELAMAT DATANG DI LAYANAN SISTEM TERPADU ";
         $data['dtlist'] = $this->crud_model->getDataTabel('layanan_tb', "stts != '99'");
 
+//        sms gateway start
+        $getjadwal = $this->crud_model->getJadwalKosong('lastsms');
+        $getjadwal1d = $this->crud_model->getJadwal();
+        $semua = $this->crud_model->getJadwalKosong('*');
+
+        if ($getjadwal === 0) {
+            $xx = $semua->row();
+            $id = $xx->id;
+            $pemohon = $xx->pemohon;
+            $noreg = $xx->noregister;
+            $ket = $xx->keterangan;
+            $telp = $xx->telp;
+
+            echo $id . 'itu';
+//            foreach ($getjadwal->result() as $row) {
+//                echo $row->id;
+//                echo $row->noregister;
+//                echo $row->pemohon;
+//                echo $row->jenis;
+//                echo $row->keterangan;
+//                echo $row->telp;
+//            }
+        } elseif ($getjadwal1d) {
+            $xx = $semua->row();
+            $id = $xx->id;
+            $pemohon = $xx->pemohon;
+            $noreg = $xx->noregister;
+            $ket = $xx->keterangan;
+            $telp = $xx->telp;
+//            echo $id . '. Kepada Yth. ' . $pemohon
+//            . '. Nomor registrasi anda adalah ' . $noreg
+//            . '. Status saat ini adalah ' . $ket;
+        } else {
+            echo 'tidak ada data yang ditampilkan';
+        }        
+//        $setsms = $this->crud_model->setLastSms($id);
         $this->template->load('template/_ah_template', 'informasi', $data);
     }
 

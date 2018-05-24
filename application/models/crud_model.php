@@ -140,31 +140,31 @@ class Crud_model extends CI_Model {
         $query = $this->db->get();
         return $query;
     }
-    
+
     function getJadwal() {
         $this->db->select('*');
         $this->db->from('layanan_tb');
         $this->db->where('lastsms >= now() - INTERVAL 1 DAY');
         $this->db->where('stts !=', '99');
         $result = $this->db->get();
-        return $result;//->result_array();
+        return $result; //->result_array();
         //'SELECT * FROM layanan_tb WHERE lastsms >= now() - INTERVAL 1 DAY and stts < 99 group by id'
     }
-    
+
     function getJadwalKosong($field) {
         $this->db->select($field);
         $this->db->from('layanan_tb');
         $this->db->where('lastsms = 0');
         $this->db->where('stts !=', '99');
         $result = $this->db->get();
-        return $result;//->result_array(); --result array menampilkan semua data pada echo json_encode
+        return $result; //->result_array(); --result array menampilkan semua data pada echo json_encode
     }
-    
-    function setLastSms ($idx) {
-            $now = date('Y-m-d H:i:s');
-            $this->db->set('lastsms', $now);
-            $this->db->where('id' , $idx);
-            $this->db->update('layanan_tb');
+
+    function setLastSms($idx) {
+        $now = date('Y-m-d H:i:s');
+        $this->db->set('lastsms', $now);
+        $this->db->where('id', $idx);
+        $this->db->update('layanan_tb');
     }
-    
- }
+
+}

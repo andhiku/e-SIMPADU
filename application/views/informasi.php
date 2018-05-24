@@ -3,6 +3,20 @@
             function () {
                 $('#dataload').fadeOut("slow").load('<?= base_url() ?>publik/refinfo').fadeIn("slow");
             }, 9000); // refresh every 10000 milliseconds
+
+    var auto_refresh = setInterval(
+            function () {
+                $('#modal').fadeOut("slow").load('<?= base_url() ?>publik/informasi').fadeIn("slow");
+            }, 9000); // refresh every 10000 milliseconds
+
+    $(window).on('load', function () {
+        $('#modal').modal('show');
+    });
+    setTimeout(function () {
+        $('#modal').modal('hide').fadeOut("slow").fadeIn("slow");
+    }, 4000);
+
+
 </script>
 <div class="panel-body">
     <h4 align="center"><?= $judul ?></h4>
@@ -57,5 +71,46 @@
 
         </div>
         <!-- /.panel-body -->
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade in" id="modal">
+    <div class="modal-dialog moda-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">x</button>
+                <div class="modal-title"><h5>Isi SMS</h5></div>
+            </div>
+            <div class="modal-body">
+                <form id="mb">
+                    <input type="hidden" name="id" value="">
+
+                    <div class="form-group">
+                        <label>
+                            <?php
+                            $semua = $this->crud_model->getJadwalKosong('*');
+                            $getjadwal = $this->crud_model->getJadwal();
+                            if ($getjadwal) {
+                                $xx = $semua->row();
+                                $id = $xx->id;
+                                $pemohon = $xx->pemohon;
+                                $noreg = $xx->noregister;
+                                $ket = $xx->keterangan;
+                                $telp = $xx->telp;
+                                echo $id . '. Kepada Yth. ' . $pemohon
+                                . '. Nomor registrasi anda adalah ' . $noreg
+                                . '. Status saat ini adalah ' . $ket;
+                            } else {
+                                echo 'tidak ada data yang ditampilkan';
+                            }
+//                            $setsms = $this->crud_model->setLastSms($id);
+                            ?>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
