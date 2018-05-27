@@ -1,3 +1,5 @@
+https://www.cloudways.com/blog/real-time-php-notification-system/
+
 https://sugrahaku.com/2016/10/cara-update-data-codeigniter-dengan-modal-bootstrap.html
 
 https://upyes.wordpress.com/2012/08/31/active-record-membentuk-hasil-query-dengan-result/

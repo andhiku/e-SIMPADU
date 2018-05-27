@@ -6,17 +6,15 @@
 
     var auto_refresh = setInterval(
             function () {
-                $('#modal').fadeOut("slow").load('<?= base_url() ?>publik/informasi').fadeIn("slow");
-            }, 9000); // refresh every 10000 milliseconds
+                $('#modal').fadeOut("slow").load('<?= base_url() ?>publik/refsms').fadeIn("slow");
+            }, 2250); // refresh every 10000 milliseconds
 
-    $(window).on('load', function () {
-        $('#modal').modal('show');
-    });
-    setTimeout(function () {
-        $('#modal').modal('hide').fadeOut("slow").fadeIn("slow");
-    }, 4000);
-
-
+//    $(window).on('load', function () {
+//            $('#modal').modal('show');
+//        });
+//    setTimeout(function () {
+//        $('#modal').modal('hide').fadeOut("slow").fadeIn("slow");
+//    }, 1000);
 </script>
 <div class="panel-body">
     <h4 align="center"><?= $judul ?></h4>
@@ -67,6 +65,27 @@
                     }
                     ?>
                 </tbody>
+                <div id="modal" class="alert alert-info">
+                    <?php
+                    if ($datalist) {
+                        $xx = $datalist->row();
+                        $id = $xx->id;
+                        $pemohon = $xx->pemohon;
+                        $noreg = $xx->noregister;
+                        $ket = $xx->keterangan;
+                        $telp = $xx->telp;
+                        $tampil = $id . '. Kepada Yth. ' . $pemohon
+                        . '. Nomor registrasi anda adalah ' . $noreg
+                        . '. Status saat ini adalah ' . $ket;
+                        ?>
+                        <strong>Info!</strong> <i class="alert"><?= $tampil ?></i> <?php
+//                        $setsms = $this->crud_model->setLastSms($id);
+                    } else {
+                        echo 'Tidak ada data terbaru';
+                    }
+                    ?>
+                    
+                </div>
             </table>
 
         </div>
@@ -76,7 +95,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade in" id="modal">
+<!--<div class="modal fade in" id="modal">
     <div class="modal-dialog moda-md">
         <div class="modal-content">
             <div class="modal-header">
@@ -89,11 +108,11 @@
 
                     <div class="form-group">
                         <label>
-                            <?php
-                            $semua = $this->crud_model->getJadwalKosong('*');
+                            <? php
+//                            $semua = $this->crud_model->getJadwalKosong('*');
                             $getjadwal = $this->crud_model->getJadwal();
                             if ($getjadwal) {
-                                $xx = $semua->row();
+                                $xx = $datalist->row();
                                 $id = $xx->id;
                                 $pemohon = $xx->pemohon;
                                 $noreg = $xx->noregister;
@@ -113,4 +132,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
