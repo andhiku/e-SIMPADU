@@ -1,5 +1,5 @@
 <?php
-if ($datalist) {
+if ($datalist != 0) {
     $xx = $datalist->row();
     $id = $xx->id;
     $pemohon = $xx->pemohon;
@@ -10,8 +10,9 @@ if ($datalist) {
             . '. Nomor registrasi anda adalah ' . $noreg
             . '. Status saat ini adalah ' . $ket;
     ?>
-    <strong>Info!</strong> <i class="alert"><?= $tampil ?></i> <?php
-//                        $setsms = $this->crud_model->setLastSms($id);
+    <strong>Info!</strong> <i class="alert"><?= $tampil ?></i>
+    <?php
+    $setsms = $this->crud_model->setLastSms($id);
 } else {
     echo 'Tidak ada data terbaru';
 }

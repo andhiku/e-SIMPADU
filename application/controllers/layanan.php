@@ -137,8 +137,9 @@ class Layanan extends CI_Controller {
                     'keterangan' => $this->input->post('keter'),
                     'stts' => $prosesset
                 );
-                $now = date('Y-m-d H:i:s');
-                $this->db->set('lastsms', $now);
+                //$now = date('Y-m-d H:i:s');
+                $kosong = date('0000-00-00 00:00:00');
+                $this->db->set('lastsms', $kosong);
                 $this->crud_model->data_update('layanan_tb', $filter, $dataSet);
 
                 redirect(base_url() . 'layanan/daftarlayanan');
