@@ -1,6 +1,7 @@
 agenda =  v   laporan
           x   notif/alert -> create scheduler sms where lastsms > 24jam
           x   notif/alert -> notif ke petugas jika ada berkas yang harus diselesaikan
+          x   notif/alert -> error jika tidak ada data yang ditampilkan
 
 
 

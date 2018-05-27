@@ -114,6 +114,7 @@ class Publik extends CI_Controller {
     
     function refsms() {
         $data['datalist'] = $this->crud_model->getJadwalKosong('*');
+        $data['datalistlewat'] = $this->crud_model->getJadwal();
         $this->load->view('retsms', $data);
     }
 
