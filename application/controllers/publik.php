@@ -103,8 +103,6 @@ class Publik extends CI_Controller {
         $data['judul'] = "SELAMAT DATANG DI LAYANAN SISTEM TERPADU ";
         $data['dtlist'] = $this->crud_model->getDataTabel('layanan_tb', "stts != '99'");
         $data['datalist'] = $this->crud_model->getJadwalKosong('*');
-//        $data['datalist'] = $this->crud_model->getDataTabel('layanan_tb', "lastsms != '0000-00-00 00:00:0'");
-//        $data['getjadwal'] = $this->crud_model->getJadwal();;
 
         $this->template->load('template/_ah_template', 'informasi', $data);
     }
@@ -116,9 +114,7 @@ class Publik extends CI_Controller {
     
     function refsms() {
         $data['datalist'] = $this->crud_model->getJadwalKosong('*');
-//        $data['datalist'] = $this->crud_model->getDataTabel2('layanan_tb', "stts != '99'", "lastsms != '0000-00-00 00:00:00'");
-//        $data['datalist'] = $this->crud_model->getDataTabel('layanan_tb', "lastsms != '0000-00-00 00:00:0'");
-        $this->load->view('retinfo', $data);
+        $this->load->view('retsms', $data);
     }
 
     function proses_login() {
