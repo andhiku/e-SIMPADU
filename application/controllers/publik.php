@@ -103,6 +103,7 @@ class Publik extends CI_Controller {
         $data['judul'] = "SELAMAT DATANG DI LAYANAN SISTEM TERPADU ";
         $data['dtlist'] = $this->crud_model->getDataTabel('layanan_tb', "stts != '99'");
         $data['datalist'] = $this->crud_model->getJadwalKosong('*');
+        $data['datalistlewat'] = $this->crud_model->getJadwal();
 
         $this->template->load('template/_ah_template', 'informasi', $data);
     }

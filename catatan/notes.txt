@@ -1,6 +1,6 @@
-https://www.cloudways.com/blog/real-time-php-notification-system/
+http://achmatim.net/2012/04/11/fungsi-group-by-dan-having-untuk-pengelompokkan-data-di-mysql/
 
-https://sugrahaku.com/2016/10/cara-update-data-codeigniter-dengan-modal-bootstrap.html
+https://www.cloudways.com/blog/real-time-php-notification-system/
 
 https://upyes.wordpress.com/2012/08/31/active-record-membentuk-hasil-query-dengan-result/
 

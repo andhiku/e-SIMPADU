@@ -67,7 +67,7 @@
                 </tbody>
                 <div id="modal" class="alert alert-info">
                     <?php
-                    if ($datalist) {
+                    if ($datalist->num_rows > 0) {
                         $xx = $datalist->row();
                         $id = $xx->id;
                         $pemohon = $xx->pemohon;
@@ -79,8 +79,8 @@
                         . '. Status saat ini adalah ' . $ket;
                         ?>
                         <strong>Info!</strong> <i class="alert"><?= $tampil1 ?></i> <?php
-                        $setsms = $this->crud_model->setLastSms($id);
-                    } elseif ($datalistlewat) {
+                        $this->crud_model->setLastSms($id);
+                    } elseif ($datalistlewat->num_rows > 0) {
                         $xx = $datalistlewat->row();
                         $id = $xx->id;
                         $pemohon = $xx->pemohon;
@@ -92,7 +92,7 @@
                         . '. Status saat ini adalah ' . $ket;
                         ?>
                         <strong>Info!</strong> <i class="alert"><?= $tampil2 ?></i> <?php
-                        $setsms = $this->crud_model->setLastSms($id);
+                        $this->crud_model->setLastSms($id);
                     } else {
                         echo 'Tidak ada data terbaru';
                     }
