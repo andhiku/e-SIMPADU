@@ -112,7 +112,7 @@ class Publik extends CI_Controller {
         $data['dtlist'] = $this->crud_model->getDataTabel('layanan_tb', "stts != '99'");
         $this->load->view('retinfo', $data);
     }
-    
+
     function refsms() {
         $data['datalist'] = $this->crud_model->getJadwalKosong('*');
         $data['datalistlewat'] = $this->crud_model->getJadwal();
