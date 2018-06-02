@@ -174,5 +174,13 @@ class Crud_model extends CI_Model {
         $this->db->where('id', $idx);
         $this->db->update('layanan_tb');
     }
+    
+    function getData($field, $tbl, $kondisi) {
+        $this->db->select($field);
+        $this->db->from($tbl);
+        $this->db->where($kondisi);
+        $result = $this->db->get();
+        return $result;
+    }
 
 }
