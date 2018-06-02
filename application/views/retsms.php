@@ -18,13 +18,13 @@ if ($datalist->num_rows > 0) {
     $nama = $xxx->user_username;
     $jenis = $xxx->user_role;
     $tlp = $xxx->telp;
-    $tampilptgs = 'Kepada Yth. Saudara/i ' . $nama
+    $tampilptgs1 = 'Kepada Yth. Saudara/i ' . $nama
             . '. Terdapat layanan dengan jenis ' . $jenis
             . ' dengan status ' . $ket
             . ' yang menunggu diproses. Pesan akan dikirim ke nomor ' . $tlp;
     ?>
     <strong>Pemohon!</strong> <i class="alert"><?= $tampil1 ?></i><br>
-    <strong>Petugas!</strong> <i class="alert"><?= $tampilptgs ?></i>
+    <strong>Petugas!</strong> <i class="alert"><?= $tampilptgs1 ?></i>
     <?php
     $this->crud_model->setLastSms($id);
 } elseif ($datalistlewat->num_rows > 0) {
@@ -39,8 +39,20 @@ if ($datalist->num_rows > 0) {
                 . '. Nomor registrasi anda adalah ' . $noreg
                 . '. Status saat ini adalah ' . $ket
                 . '. Pesan ini dikirim ke nomor ' . $telp;
+        
+        //sms ke petugas
+        $dataptgs = $this->crud_model->getData('*', 'user_tb', "user_role = $jns");
+        $xxx = $dataptgs->row();
+        $nama = $xxx->user_username;
+        $jenis = $xxx->user_role;
+        $tlp = $xxx->telp;
+        $tampilptgs2 = 'Kepada Yth. Saudara/i ' . $nama
+              . '. Terdapat layanan dengan jenis ' . $jenis
+              . ' dengan status ' . $ket
+              . ' yang menunggu diproses. Pesan akan dikirim ke nomor ' . $tlp;
         ?>
     <strong>Info!</strong> <i class="alert"><?= $tampil2 ?></i>
+    <strong>Info!</strong> <i class="alert"><?= $tampilptgs2 ?></i>
     <?php
     $this->crud_model->setLastSms($id);
 } else {
