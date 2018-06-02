@@ -139,8 +139,7 @@ class Crud_model extends CI_Model {
         return $query;
     }
 
-    function getJadwal() {
-        $now = date('Y-m-d H:i:s');
+    function getJadwalTerdaftar() {
         $this->db->select('*');
         $this->db->from('layanan_tb');
         $this->db->where('lastsms < now() - INTERVAL 24 HOUR');
@@ -150,12 +149,14 @@ class Crud_model extends CI_Model {
         return $result; //->result_array();
         //'SELECT * FROM layanan_tb WHERE lastsms >= now() - INTERVAL 1 DAY and stts != 99 group by id'
     }
-
-    function getDataTabel2($tbl = null, $kondisi1 = null, $kondisi2 = null) {
-        $this->db->where($kondisi1);
-        $this->db->where($kondisi2);
-        $result = $this->db->get($tbl);
-        return $result->result_array();
+    
+    function getJadwal() {
+        $this->db->select('*');
+        $this->db->from('layanan_tb');
+        $this->db->where('lastsms < now() - INTERVAL 24 HOUR');
+        $this->db->where('stts !=', '99');
+        $result = $this->db->get();
+        return $result;
     }
 
     function getJadwalKosong($field1) {
