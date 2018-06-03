@@ -9,6 +9,11 @@ admin:
   Laporan: laporan/rekaplayanan
   Logout: publik/logout
   
+0:
+  Informasi: publik/informasi
+  Registrasi/ Verifikasi: layanan/daftarlayanan
+  Logout: publik/logout
+  
 1:
   Informasi: publik/informasi
   Registrasi/ Verifikasi: layanan/daftarlayanan

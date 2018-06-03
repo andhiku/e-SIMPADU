@@ -27,10 +27,14 @@ $rolfil = ltrim($user['usrrole'], "op");
                                 echo $user['usrnama'];
                                 echo "<br>";
                                 $role = $user['usrrole'];
-                                $jnsptgs = $this->crud_model->getData('*', 'jnslayanan', "id = $role");
-                                $xx = $jnsptgs->row();
-                                $jns = $xx->nmlayanan;
-                                echo "(" . $jns . ")"
+                                if ($role == 0) {
+                                    echo "Frontline";
+                                } else {
+                                    $jnsptgs = $this->crud_model->getData('*', 'jnslayanan', "id = $role");
+                                    $xx = $jnsptgs->row();
+                                    $jns = $xx->nmlayanan;
+                                    echo "(" . $jns . ")";
+                                }
                                 ?></th>
                             <th>Tgl. Berkas</th>
                             <th>Pemohon</th>
@@ -53,13 +57,13 @@ $rolfil = ltrim($user['usrrole'], "op");
                                 ?>
                                 <tr>
                                     <td width="23%" align="center">
-                                        <button type="button" class="btn btn-primary <?=$isrole?>" 
+                                        <button type="button" class="btn btn-primary <?= $isrole ?>" 
                                                 onclick="SetIdLayanan(<?= $idm ?>,<?= $prosesnum ?>)"
                                                 data-toggle="modal" data-target="#myProses">Proses&nbsp;
                                             <span class="badge"><?= $prosesnum ?></span>
                                         </button>
 
-                                        <button type="button" class="btn btn-warning <?=$isdel?>" 
+                                        <button type="button" class="btn btn-warning <?= $isdel ?>" 
                                                 onclick="location.href = '<?= $urlset ?>hapus/<?= $rowtr['id'] ?>'"
                                                 data-toggle="dropdown">Delete</button>
 
