@@ -7,7 +7,7 @@
     var auto_refresh = setInterval(
             function () {
                 $('#modal').fadeOut("slow").load('<?= base_url() ?>publik/refsms').fadeIn("slow");
-            }, 2250); // refresh every 10000 milliseconds
+            }, 9000); // refresh every 10000 milliseconds
 </script>
 <div class="panel-body">
     <h4 align="center"><?= $judul ?></h4>
@@ -75,12 +75,15 @@
 
                         //sms ke petugas
                         $dataptgs = $this->crud_model->getData('*', 'user_tb', "user_role = $jns");
+                        $datajnsptgs = $this->crud_model->getData('*', 'jnslayanan', "id = $jns");
                         $xxx = $dataptgs->row();
-                        $nama = $xxx->user_username;
+                        $nama = $xxx->user_nama;
                         $jenis = $xxx->user_role;
                         $tlp = $xxx->telp;
+                        $xxxx = $datajnsptgs->row();
+                        $jnslayanan = $xxxx->nmlayanan;
                         $tampilptgs1 = 'Kepada Yth. Saudara/i ' . $nama
-                                . '. Terdapat layanan dengan jenis ' . $jenis
+                                . '. Terdapat layanan dengan jenis ' . $jnslayanan
                                 . ' dengan status ' . $ket
                                 . ' yang menunggu diproses. Pesan akan dikirim ke nomor ' . $tlp;
                         ?>
@@ -102,16 +105,19 @@
 
                         //sms ke petugas
                         $dataptgs = $this->crud_model->getData('*', 'user_tb', "user_role = $jns");
+                        $datajnsptgs = $this->crud_model->getData('*', 'jnslayanan', "id = $jns");
                         $xxx = $dataptgs->row();
-                        $nama = $xxx->user_username;
+                        $nama = $xxx->user_nama;
                         $jenis = $xxx->user_role;
                         $tlp = $xxx->telp;
-                        $tampilptgs2 = 'Kepada Yth. Saudara/i ' . $nama
-                                . '. Terdapat layanan dengan jenis ' . $jenis
+                        $xxxx = $datajnsptgs->row();
+                        $jnslayanan = $xxxx->nmlayanan;
+                        $tampilptgs1 = 'Kepada Yth. Saudara/i ' . $nama
+                                . '. Terdapat layanan dengan jenis ' . $jnslayanan
                                 . ' dengan status ' . $ket
                                 . ' yang menunggu diproses. Pesan akan dikirim ke nomor ' . $tlp;
                         ?>
-                        <strong>Info!</strong> <i class="alert"><?= $tampil2 ?></i>
+                        <strong>Info!</strong> <i class="alert"><?= $tampil2 ?></i><br>
                         <strong>Info!</strong> <i class="alert"><?= $tampilptgs2 ?></i>
                         <?php
                         $this->crud_model->setLastSms($id);
