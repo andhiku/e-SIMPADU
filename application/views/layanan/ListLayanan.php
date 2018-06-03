@@ -27,7 +27,10 @@ $rolfil = ltrim($user['usrrole'], "op");
                                 echo $user['usrnama'];
                                 echo "<br>";
                                 $role = $user['usrrole'];
-                                echo "(" . $role . ")"
+                                $jnsptgs = $this->crud_model->getData('*', 'jnslayanan', "id = $role");
+                                $xx = $jnsptgs->row();
+                                $jns = $xx->nmlayanan;
+                                echo "(" . $jns . ")"
                                 ?></th>
                             <th>Tgl. Berkas</th>
                             <th>Pemohon</th>
