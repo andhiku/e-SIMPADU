@@ -47,7 +47,6 @@ if ($datalist->num_rows > 0) {
     $dataptgs = $this->crud_model->getData('*', 'user_tb', "user_role = $jns");
     $datajnsptgs = $this->crud_model->getData('*', 'jnslayanan', "id = $jns");
     $xxx = $dataptgs->row();
-
     $nama = $xxx->user_nama;
     $jenis = $xxx->user_role;
     $tlp = $xxx->telp;
