@@ -9,6 +9,7 @@ date_default_timezone_set("Singapore");
         <link rel="stylesheet" media="screen" href="<?= base_url() ?>files/bootstrap.css">
 
         <script src="<?= base_url() ?>files/jquery.min.js"></script>
+        <link rel="stylesheet" href="<?= base_url() ?>files/jquery.css">
         <link rel="stylesheet" href="<?= base_url() ?>files/bootstrap/css/bootstrap.min.css">
         <script src="<?= base_url() ?>files/bootstrap/js/bootstrap.min.js"></script>
 
