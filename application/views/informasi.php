@@ -7,7 +7,7 @@
     var auto_refresh = setInterval(
             function () {
                 $('#modal').fadeOut("slow").load('<?= base_url() ?>publik/refsms').fadeIn("slow");
-            }, 9000); // refresh every 10000 milliseconds
+            }, 2250); // refresh every 10000 milliseconds
 </script>
 <div class="panel-body">
     <h4 align="center"><?= $judul ?></h4>
